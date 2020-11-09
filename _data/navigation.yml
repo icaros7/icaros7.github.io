@@ -6,7 +6,7 @@ main:
     url: /tags/
   - title: "Years"
     url: /years/
-  - title: "Downloads"
-    url: /project/
+  - title: "Projects"
+    url: /projects/
   - title: "About"
     url: /about/
