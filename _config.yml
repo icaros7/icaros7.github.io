@@ -28,7 +28,7 @@ teaser                   : # path of fallback teaser image, e.g. "/assets/images
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
-words_per_minute         : 200
+words_per_minute         : 150
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "staticman", "staticman_v2", "utterances", "custom"
   disqus:
@@ -87,7 +87,7 @@ social:
 analytics:
   provider               : "google" # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : UA-70115574-1
+    tracking_id          : "UA-70115574-1"
     anonymize_ip         : # true, false (default)
 
 
@@ -95,7 +95,7 @@ analytics:
 author:
   name             : "iCAROS7"
   avatar           : "https://github.com/icaros7.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "0x49578AFED2219C6A || Student at SungKongHoe_Univ."
+  bio              : "{0x49578AFED2219C6A} {Student at SungKongHoe_Univ.}"
   location         : "Seoul, Republic of Korea"
   email            : "hominlab@gmail.com"
   links:
