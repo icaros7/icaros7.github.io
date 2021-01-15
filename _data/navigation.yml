@@ -5,8 +5,10 @@ main:
   - title: "Tags"
     url: /tags/
   - title: "Years"
-    url: /years/
+    url: /year-archive/
   - title: "Projects"
     url: /projects/
+  - title: "Key Store"
+    url: /gpg/
   - title: "About"
     url: /about/
