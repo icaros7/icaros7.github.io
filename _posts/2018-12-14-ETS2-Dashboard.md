@@ -1,11 +1,13 @@
 ---
-layout: posts
 title:  "ETS2/ATS Telemetry 서버 한글판 - 유로트럭2 아메트럭 속도계"
-date:   2018-12-14 16:25:59
-author: iCAROS7
-categories: iCAROS7_Works
-tags:	ets2 eurotrucksimulator ATS 유로트럭 속도계 speedometer
-cover:  "/assets/2018-12-14-ETS2-Dashboard/3.jpg"
+categories:
+    - iCAROS7_Works
+tags:
+- ets2
+- eurotrucksimulator
+- ATS
+- 유로트럭_속도계 
+-speedometer
 redirect_from:
     - /252
 ---

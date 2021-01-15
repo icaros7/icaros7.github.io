@@ -1,11 +1,9 @@
 ---
-layout: posts
 title:  "블로그를 이사 중 입니다."
-date:   2018-12-26 04:25:00
-author: iCAROS7
-categories: Notices
-tags:	minnote.net 이사
-cover:  "/assets/cover/instacode.png"
+categories:
+    - Notices
+tags:
+    - 블로그_개편
 ---
 
 안녕하세요!

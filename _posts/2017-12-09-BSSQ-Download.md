@@ -1,11 +1,18 @@
 ---
-layout: posts
 title:  "BSSQ 메인보드 LU6500 / SU880 / KU8800 관련 자료 모음 (Custom rom/kernel/Root Kit for BSSQ device)"
-date:   2017-12-09 05:18:59
-author: iCAROS7
-categories: iCAROS7_Works
-tags:	bssq 옵티머스q2 옵티머스q 옵티머스ex lu6500 star su880 ku8800 lu2300 Optimus
-cover:  "/assets/cover/LG_Camera.jpg"
+categories:
+    - iCAROS7_Works
+tags:
+    - bssq
+    - 옵티머스q2
+    - 옵티머스q
+    - 옵티머스ex
+    - lu6500
+    - star
+    - su880
+    - ku8800
+    - lu2300
+    - Optimus
 redirect_from:
     - /249
 ---

@@ -1,11 +1,19 @@
 ---
-layout: posts
 title:  "미성년자 (청소년) 통장 및 체크 카드 신규 개설 발급 안내 (부모님 몰래 통장)"
-date:   2016-02-20 03:19:59
-author: iCAROS7
-categories: Hobby
-tags:	부모님 몰래 통장 만들기 쇼핑몰 스토어 스팀 앱 체크카드 신한 국민 우리 하나 카카오
-cover:  "/assets/2016-02-20-Make-Bank-Book/1.jpg"
+categories:
+    - Hobby
+tags:
+    - 부모님_몰래_통장_만들기 
+    - 쇼핑몰
+    - 스토어
+    - 스팀 
+    - 앱
+    - 체크카드
+    - 신한
+    - 국민
+    - 우리
+    - 하나
+    - 카카오
 redirect_from:
     - /242
 ---
