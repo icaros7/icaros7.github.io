@@ -3,11 +3,11 @@ title:  "ETS2/ATS Telemetry 서버 한글판 - 유로트럭2 아메트럭 속도
 categories:
     - iCAROS7_Works
 tags:
-- ets2
-- eurotrucksimulator
-- ATS
-- 유로트럭_속도계 
--speedometer
+    - ets2
+    - eurotrucksimulator
+    - ATS
+    - 유로트럭_속도계 
+    - speedometer
 redirect_from:
     - /252
 ---
