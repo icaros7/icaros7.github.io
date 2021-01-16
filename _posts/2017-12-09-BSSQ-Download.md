@@ -1,7 +1,7 @@
 ---
 title:  "BSSQ 메인보드 LU6500 / SU880 / KU8800 관련 자료 모음 (Custom rom/kernel/Root Kit for BSSQ device)"
 categories:
-    - iCAROS7_Works
+    - iCAROS7 Works
 tags:
     - bssq
     - 옵티머스q2

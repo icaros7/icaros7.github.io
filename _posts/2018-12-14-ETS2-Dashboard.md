@@ -1,7 +1,7 @@
 ---
 title:  "ETS2/ATS Telemetry 서버 한글판 - 유로트럭2 아메트럭 속도계"
 categories:
-    - iCAROS7_Works
+    - iCAROS7 Works
 tags:
     - ets2
     - eurotrucksimulator
