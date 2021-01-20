@@ -24,6 +24,8 @@ redirect_from:
 1. [https://drive.google.com/open?id=0BzVgoYUbLRYAbGlZWGtuaTRzYkE](https://drive.google.com/open?id=0BzVgoYUbLRYAbGlZWGtuaTRzYkE)
 2. **[http://bssq.minnote.net](http://bssq.minnote.net)** (비밀번호 : dlzkfhtm / 한국어로 치면 이카로스 입니다) (Powered by harukasan)
 
+{% include ad_content.html %}
+
 해외망이 느리시다면 2번 이용하시면 좋습니다.  
 둘다 사용하시는 인터넷 회선이 기가비트급 이상 이시라면 최대 80MB/s 까지 빠른 속도로 다운로드 가능합니다.
 
