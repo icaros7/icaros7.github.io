@@ -13,6 +13,8 @@ toc: true
 # Youtube Music Converter
 본 어플리케이션은 VideoLibrary를 활용하여 Youtube 로부터 음원 또는 영상을 저장 한 뒤, ffmpeg를 통하여 최종적으로 .mp3 파일로 저장하는 앱 입니다.
 
+아마 대량으로 파일을 한번에 저장하시는 분께 도움이 될듯 합니다. 저 역시 그런 취지에서 만든 어플리케이션이기도 합니다.
+
 # 스크린샷
 ![](https://github.com/icaros7/youtube_music_converter/raw/gui_win_form/Image/preview_Korean.png?raw=true)
 
