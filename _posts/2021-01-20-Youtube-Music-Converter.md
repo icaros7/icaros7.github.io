@@ -31,7 +31,7 @@ toc: true
 
 # 사용법
 ## 준비
-1. <a herf="https://github.com/icaros7/youtube_music_converter/releases/latest" target="_blank">가장 최신의 릴리즈를 github</a>에서 다운로드 받고 압축을 해제 합니다.
+1. <a href="https://github.com/icaros7/youtube_music_converter/releases/latest" target="_blank">가장 최신의 릴리즈를 github</a>에서 다운로드 받고 압축을 해제 합니다.
 2. 사용하는 환경 또는 운영체제에 따라 아래 사항을 참조 합니다.
 
 ## GUI 환경 / 윈도우
@@ -45,4 +45,4 @@ toc: true
 4. 완료 될 경우 폴더 열기 버튼을 누릅니다.
 
 ## CUI 환경 및 직접 빌드하여 사용
-<a herf="https://github.com/icaros7/youtube_music_converter" target="_blank">github 참조</a>
+<a href="https://github.com/icaros7/youtube_music_converter" target="_blank">github 참조</a>
