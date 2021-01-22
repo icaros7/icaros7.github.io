@@ -40,13 +40,14 @@ toc: true
 
 <br>
 <hr>
-{% include ad_content.html %}
 
 # 커스텀 워치 페이스 설치하기
 ![](/assets/2021-01-21-Use-Miband/1.jpg)   
 이것은 현재 저의 미밴드 4 워치페이스 입니다. 기본 워치페이스보다 깔끔하며 보기 편하게 모든 정보를 다 띄운다는 점에서 참 편리 한 것 같습니다. 홈술 중이라 심박수가 높게 나오네요...!
 
-미밴드4는 기본적으로 제공되는 워치페이스 외에 커스텀툴을 이용하여 서드파티 워치페이스를 설치 할 수 있습니다. 
+미밴드4는 기본적으로 제공되는 워치페이스 외에 커스텀툴을 이용하여 서드파티 워치페이스를 설치 할 수 있습니다.
+
+{% include ad_content.html %}
 
 위 워치페이스는 필자가 [ERLE MOD](https://amazfitwatchfaces.com/mi-band-4/view/2419)를 기반으로 만들어진 [ERLE MOD KOREAN](https://amazfitwatchfaces.com/mi-band-4/view/18840)을 기반으로 마개조하여 만들었습니다.
 
