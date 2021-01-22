@@ -39,7 +39,7 @@ LU6500 옵티머스Q2 관련 자료 만 모았습니다. 여러 버전을 소유
 # iCAROS Orange v8 -> LU650131+@ 펌웨어
 예전에 제가 좋아하던 오랜지 색 베이스의 테마 입니다. v8과 v8.1은 밝기 슬라이더 위치가 다릅니다.
 
-![](../assets/2021-01-23-LU6500-iCAROS-System/1.png)
+![](/assets/2021-01-23-LU6500-iCAROS-System/1.png)
 
 ## v8
 1. <a href="https://drive.google.com/file/d/1OYhckBSMHX_xGLfxFAgh4SRXyRNM3gJe/view?usp=sharing" target="_blank">구글 드라이브</a>
