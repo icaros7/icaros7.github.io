@@ -11,8 +11,7 @@ redirect_from:
     - /137
     - /128
 ---
-LG 옵티머스Q2 (LG-LU6500) 관련 iCAROS7 자료 모음집
-커스텀 리커버리 관련 모음
+LG 옵티머스Q2 (LG-LU6500) 관련 iCAROS7 커스텀 리커버리 관련 모음
 
 본 글은 [여기](https://minnote.net/icaros7%20works/BSSQ-Download/)에서 더 많은 정보를 확인 하실 수 있습니다.
 

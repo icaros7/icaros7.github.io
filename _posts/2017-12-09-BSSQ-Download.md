@@ -16,8 +16,7 @@ tags:
 redirect_from:
     - /249
 ---
-LG 옵티머스Q2/EX (LG-LU6500/SU880/KU880) bssq 보드 관련
-복구 가능 자료 모음집
+LG 옵티머스Q2/EX (LG-LU6500/SU880/KU880) bssq 보드 관련 자료 모음집
 
 # 한국어
 **English Version available on end of post**  

@@ -10,8 +10,7 @@ tags:
     - 유튜브
 toc: true
 ---
-VideoLibrary를 활용한 Youtube 음악 동시 저장!
-한번에 여러 동영상을 저장할때 매우 유용합니다.
+Youtube 음악 동시 저장 가능! 다중 저장시 매우 유용!
 
 # Youtube Music Converter
 본 어플리케이션은 VideoLibrary를 활용하여 Youtube 로부터 음원 또는 영상을 저장 한 뒤, ffmpeg를 통하여 최종적으로 .mp3 파일로 저장하는 앱 입니다.
