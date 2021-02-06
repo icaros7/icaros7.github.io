@@ -11,6 +11,8 @@ redirect_from:
     - /194
     - /228
 ---
+LG 옵티머스Q2 (LG-LU6500) 관련 iCAROS7 자료 모음집
+루팅 및 루팅툴 관련 모음
 
 본 글은 [여기](https://minnote.net/icaros7%20works/BSSQ-Download/)에서 더 많은 정보를 확인 하실 수 있습니다.
 

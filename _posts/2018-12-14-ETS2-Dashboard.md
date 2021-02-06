@@ -8,9 +8,13 @@ tags:
     - ATS
     - 유로트럭_속도계 
     - speedometer
+    - telemetry
 redirect_from:
     - /252
 ---
+다중 모니터 혹은 태블릿/스마트폰에 유로트럭 정보 띄우기
+Telemetry API를 사용한 모바일 웹 대시보드
+
 안녕하세요!  
 
 유로트럭2을 오래 하셨던 분이라면 꼭 한번 쯤 보셨을 법한 [**@Funbit**](https://github.com/Funbit) 씨의 [**ETS2/ATS Telemetry Mobile Dashboard**](https://github.com/Funbit/ets2-telemetry-server) 앱이 한참 업데이트 되지 않고 있어, 얼마전부터 한국어와 몇몇 기능들을 더 넣어 보고 있습니다.  
