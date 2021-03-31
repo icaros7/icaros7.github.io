@@ -18,6 +18,10 @@ published: true
 ---
 서피스 프로4에 해킨토시 설치 하기 및 실사용 후기!
 
+업데이트 : 2021년 3월 31일 07:30
++ 문제 해결 섹션 보강
++ 스크린샷 추가
+
 **서론이 길다 느끼신 다면 상단 우측 원하시는 목차로 바로 이동하세요! 다운로드 과정 부터 시작 하시려면 2-2번!**
 
 안녕하세요! 이번에 X코드 쓸일이 있어서 해킨토시를 설치하게 되었습니다. 진짜 맥북이 있었을 때에는 무거워서 찬밥 신세라 금방 팔아버렸지만 꼭 없으면 아쉽습니다.
@@ -79,9 +83,6 @@ published: true
     - OpenCore를 통한 해킨토시 설치
     - Windows 10 Pro 재설치
     - rEFInd를 통한 듀얼 부팅
-4. 정의
-    - 서피스 -> 서피스 프로4
-    - USB -> macOS 설치용 USB
 
 잘 모르시고 따라하신다면 그냥 **"아 이런게 다 있구나..."** 정도로 봐주시면 됩니다.
 
@@ -121,6 +122,16 @@ published: true
 2. macOS 리커버리로 부팅
 3. 리커버리 복구 옵션을 통해 macOS 디스크에 설치
 4. 완료
+
+## 2-4. 정의
+|단어|정의|
+|---|---|
+|서피스|Surface Pro 4|
+|USB|해킨토시 설치용 USB|
+
+{% include ad_content.html %}
+
+<hr>
 
 # 3. macOS 리커버리 다운로드
 3번에서 받은 파일 중 OpenCorePkg 폴더가 기준 입니다.
@@ -166,15 +177,8 @@ OpenCore 구성에 의해 BitLocker가 켜져있는 경우 디스크 파티션 �
 3. USB 최상위에 복사
 4. USB에 "com.apple.recovery.boot" 라는 이름의 폴더를 생성
 5. 과정3에서 받은 BaseSystem.dmg 및 BaseSystem.chunklist를 `com.apple.recovery.boot` 폴더 내에 복사
-6. 모든 과정을 마치고 나면 USB내 구조가 아래 형태
-
-        USB
-        └EFI 폴더
-         └BOOT 폴더
-         └OC 폴더
-        └com.apple.recovery.boot 폴더
-         └BaseSystem.dmg
-         └BaseSystem.chunklist
+6. 모든 과정을 마치고 나면 USB내 구조가 아래 형태   
+    ![](assets/2021-03-29-Surface-Pro-4-Hackintosh/5.png)
 
 # 6. OpenCore 설정 파일 개인화
 과정3에서 받은 GenSMBIOS 를 사용하여 OpenCore 설정 파일을 개인화 합니다.
@@ -263,30 +267,15 @@ Windows is hibernate 라는 메시지가 출력된다면 Windows 1회 부팅 이
     - 파티션 구성을 안할 경우 SSD 전체를 macOS가 사용하여 윈도우 설치가 불능
 6. 디스크 파티셔닝이 끝났다면 디스크 유틸리티를 종료
 
-## 9-1. 오류 해결> 디스크 지우기 혹은 파티셔닝 실행 시 강제로 꺼짐
+## <a id="_9_1"></a>9-1. 오류 해결> 디스크 지우기 혹은 파티셔닝 실행 시 강제로 꺼짐
 제가 한참 걸렸던 부분 입니다. 이 부분은 원인은 파악하지 못하였지만 현재 파티션 구조에 의해 일어나는 문제인듯 합니다.
 
 OpenCore 구성에 의해 각 파티션이 각기 다른 디스크로 인식이 되고 있었습니다. 따라서 실질적 물리 디스크는 1개인 파티션을 일부만 지우기를 시도하려 하여 그렇지 않나....싶습니다.
 
 해결은 저는 Windows 10 설치 USB 내부에 있는 diskpart 를 사용하여 해결하였습니다. 이 부분은 약간 복잡 합니다.
 
-1. USB를 서피스 이외의 데스크톱/랩톱에 연결
-2. USB 폴더 구조를 아래와 같이 변경 (`_macOS` 폴더 생성 후 모든 파일 이동)
-
-        USB
-        └_macOS
-         └EFI 폴더
-         └com.apple.recovery.boot 폴더
-3. Windows 10 Pro ISO 내부 파일을 모두 USB 최상단에 복사
-4. USB를 다시 서피스에 연결하고 부팅
-5. `Windows 설치` 앱이 실행된다면 `Shift + F10`을 눌러 명령 프롬프트 실행
-    - 혹은 다음 버튼을 누른 다음 `문제 해결` -> `명령 프롬프트` 순으로 선택
-6. 아래와 같은 코드 입력
-
-        diskpart
-        list disk
-7. 출력값 중 본인의 서피스 디스크 용량과 같은 디스크 번호 기억
-8. 아래와 같은 코드 입력
+1. [diskpart 사용하기](#_diskpart)를 참조하여 디스크 번호 기억
+2. 아래와 같은 코드 입력
     - 디스크 번호가 0이라 가정
     - macOS에 할당할 파티션 크기는 80GB(=81,920MB)라 가정
     - Windows에 할당할 파티션 크기는 120GB(=122,880MB)라 가정
@@ -302,21 +291,9 @@ OpenCore 구성에 의해 각 파티션이 각기 다른 디스크로 인식이 
         cre par pri size=122880
         for quick fs=ntfs label="Windows"
         exit
-9. 명령 프롬프트를 닫고 서피스를 종료 합니다.
-10. USB를 다시 서피스 이외의 데스크톱/랩톱에 연결
-11. USB 폴더 구조를 아래와 같이 변경 (`_Windows` 폴더 생성 후 모든 파일 이동)
-
-        USB
-        └_Windows 폴더
-        └_macOS 폴더
-12. `_macOS`에 있는 모든 파일을 최상위로 다시 꺼내기
-
-        USB
-        └_macOS 폴더
-        └_Windows 폴더
-        └EFI 폴더
-        └com.apple.recovery.boot 폴더
-13. 다시 디스크 유틸리티 실행 후 재시도
+3. 명령 프롬프트를 닫고 서피스를 종료
+4. [macOS 설치 파일로](#_macOS)를 참고
+5. 다시 디스크 유틸리티 실행 후 재시도
 
 # 10. macOS Big Sur 설치 및 설정
 ## 10-1. 온라인으로부터 설치
@@ -338,18 +315,9 @@ OpenCore 구성에 의해 각 파티션이 각기 다른 디스크로 인식이 
 이 중 2번을 선택하면 macOS로 부팅되며, 리얼맥과 동일하게 초기 설정을 진행하여 주시면 됩니다.
 
 # 11. Windows 10 Pro 설치 및 설정
-## 11-1. Windows 10 Pro 설치 준비
-1. USB를 서피스 이외의 데스크톱/랩톱에 연결
-2. USB 폴더 구조를 아래와 같이 변경 (`_macOS` 폴더 생성 후 모든 파일 이동)
-
-        USB
-        └_macOS
-         └EFI 폴더
-         └com.apple.recovery.boot 폴더
-3. Windows 10 Pro ISO 내부 파일을 모두 USB 최상단에 복사
-    - 모두 복사할 필요는 없지만 설명 생략
-4. USB를 다시 서피스에 연결하고 부팅
-5. 일반적인 과정을 통해 Windows 10 Pro를 재설치 합니다.
+## <a id="_11_1"></a>11-1. Windows 10 Pro 설치 준비
+1. [Windows 설치 파일로](#_Windows)를 참조
+2. 일반적인 과정을 통해 Windows 10 Pro를 재설치
 
 참고로 위 과정에서 받은 Windows 10 Pro 이미지는 모든 PC에 공통으로 들어가는 파일 입니다. 따라서 Surface 관련 요소가 탑제되어있지 않습니다. 시스템 정보에 나오는 Surface 로고도 없어지며 인터넷 연결 없이는 Surface 관련 드라이버도 설치되어있지 않습니다. 인터넷 연결 상태라면 당연히 자동으로 설치 됩니다.
 
@@ -386,38 +354,34 @@ OpenCore 구성에 의해 각 파티션이 각기 다른 디스크로 인식이 
 
         sudo mkdir /Volumes/EFI
         sudo mount -t msdos /dev/disk0s1 /Volumes/EFI
-6. 이후 Finder 에서 `무제` 혹은 `SYSTEM` 이라는 항목으로 접근 가능
+6. 이후 Finder 에서 `무제` 혹은 `SYSTEM` 이라는 항목으로 접근 가능   
+![](assets/2021-03-29-Surface-Pro-4-Hackintosh/4.png)
 
-### 12-2-2. Windows에서 마운트
+### <a id="_12_2_2"></a>12-2-2. Windows에서 마운트
 `EFI Mounter` 같은 서드파티 앱을 다운로드 하시거나 아래 명령어들을 통해 수동으로 가능합니다.
 
-1. `윈도우키 + X`를 누름
-2. `Windows Powershell (관리자)` 실행
-3. 아래 명령어 입력
-
-        cmd
-        diskpart
-        list disk
-4. 출력값 중 본인의 서피스 디스크 용량과 같은 디스크 번호 기억
-5. 아래 명령어 입력
+1. ![diskpart 사용법](#_diskpart_win)을 참고
+2. 아래 명령어 입력
     - 디스크0 이라 가정
 
         sel disk 0
         list part
-6. 이중 System 파티션 번호 기억
-7. 아래 명령어 입력
+3. 이중 System 파티션 번호 기억
+4. 아래 명령어 입력
     - 파티션1이라 가정
 
         sel part 1
         assign letter=S
         exit
-8. 이후 S드라이브에 EFI가 마운트 됩니다.
+5. 이후 S드라이브에 EFI가 마운트 됩니다.
 
-Windows 10에서 하시는 경우 EFI 드라이브에 접근하기 위해선 **관리자 권한**으로 실행된 앱만 가능 합니다.
+Windows 10에서 하시는 경우 EFI 드라이브에 접근하기 위해선 **관리자 권한**으로 실행된 앱만 가능 합니다. Windows 탐색기는 이상하게 관리자 권한으로 실행하여도 작동되지 않습니다. 저는 그래서 그림판이나 메모장을 주로 이용 합니다. 
 
-Windows 탐색기는 이상하게 관리자 권한으로 실행하여도 작동되지 않습니다. 저는 그래서 그림판이나 메모장을 주로 이용 합니다. 
-
-작업관리자 실행 - 상단 파일 메뉴 - 실행 - `mspaint` 혹은 `notepad` 입력 후 하단 `관리자 권한으로 실행` 체크 후 실행
+1. 작업관리자 실행
+2. 상단 파일 메뉴
+3. 실행
+4. `mspaint` 혹은 `notepad` 입력
+5. 하단 `관리자 권한으로 실행` 체크 후 실행
 
 위와 같은 과정을 거치신 다음 파일 열기 등 파일 탐색기 창에 나오는 다이얼로그를 띄우시면 거기서 EFI 파티션 접근이 가능합니다.
 
@@ -428,26 +392,15 @@ Windows 탐색기는 이상하게 관리자 권한으로 실행하여도 작동�
 3. `icons` 폴더, `refind_x64` 파일 및 `refind.conf-sample` 파일 EFI 파티션 내 `refind` 폴더에 복사
 4. `refind.conf-sample` 파일 이름을 `refind.conf`로 변경
 5. EFI 파티션 구조가 아래와 같아야함
-
-        EFI
-        └BOOT 폴더
-        └APPLE 폴더 (삭제)
-        └Microsoft 폴더
-        └refind 폴더
-         └icons 폴더
-         └refind_x64.efi
-         └refind.conf
+    - APPLE 폴더가 존재한다면 삭제   
+    ![](assets/2021-03-29-Surface-Pro-4-Hackintosh/6.png)
 
 ## 12-4. 시스템 EFI에 OpenCore 설치
 
-- USB 내 OC 폴더를 EFI 파티션 내 복사
+USB 내 OC 폴더를 EFI 파티션 내 복사   
+![](assets/2021-03-29-Surface-Pro-4-Hackintosh/11.png)   
+(위 사진은 필자 상태. 무조건 같지 않아도 됩니다. 중요한 것은 OC 폴더)
 
-        EFI
-        └BOOT 폴더
-        └Microsoft 폴더
-        └refind 폴더
-        └OC 폴더
-        └그외 기타
 
 ## 12-5. rEFInd 테마 및 설정
 자세히 다루지는 않겠습니다만, refind.conf 를 텍스트 편집기로 열어보시면 아래와 같은 값들이 있습니다.
@@ -458,7 +411,7 @@ Windows 탐색기는 이상하게 관리자 권한으로 실행하여도 작동�
         # 뭐라뭐라
         #enable_mouse
 
-위 값 중 `#enable_~~`의 앞에 #를 지워주시면 터치와 마우스 사용이 가능해집니다. macOS에서 사용 가능한것이 아닌 rEFInd 에서 활성 입니다.
+위 값 중 `#enable_~~`의 앞에 `#`를 지워주시면 터치와 마우스 사용이 가능해집니다. macOS에서 사용 가능한것이 아닌 rEFInd 에서 활성 입니다.
 
 또한 테마도 지원하여 여러가지 이쁜 테마들이 존재합니다. 이는 제가 직접 다루지 않겠습니다.
 
@@ -488,7 +441,100 @@ Windows 탐색기는 이상하게 관리자 권한으로 실행하여도 작동�
 그래서 최대한 제 환경과 동일하게 만들기 위해 이해보단 직접 무작정 따라하는 강좌를 만들게 되었습니다. 시간이 되시거나 관심이 있으시다면 이게 왜 그렇게 동작하는지를 조금 더 유심히 봐주시면 좋을 것 같습니다.
 
 ## 14-2. 기타 문제 해결
-### 14-2-1. 윈도우 부팅시 파란 화면에 Recovery
+### <a id="_14_2_1"></a>14-2-1. 윈도우 부팅시 파란 화면에 Recovery
 아마 높은 확률로 제가 처음 언급드린 **최초 1회에 한해 Windows 파티션이 raw로 포맷되는 현상**을 겪으신듯 합니다.
 
-이는 아직 원인을 잘 모르겠으며 대부분의 커뮤니티에서도 최초 1회에 한하여 그런듯 합니다. 따라서 윈도우10 재설치 및 13번 rEFInd 사용 항목을 한번 더 시행해 주시면 됩니다.
+이는 아직 원인을 잘 모르겠으며 대부분의 커뮤니티에서도 최초 1회에 한하여 그런듯 합니다.
+
+추가로 적습니다. 제 기준 <span style="color:red; font-size:18pt;">OpenCore 부트로더 상에서 `Windows`로 부팅시</span> 해당 문제가 생기는 것 같습니다. **OpenCore가 아닌 rEFInd** 로 부팅하여도 동일한 경우...안될 가능성도 있지만 Microsoft의 `chkdsk` 앱을 사용해 복구 가능한 경우도 있습니다.
+
+1. 바로 하단의 [Windows 설치 파일로](#_Windows)를 참고
+2. 더 하단의 [diskpart 사용하기](#_diskpart)를 참고
+3. 다음과 같은 명령어 입력
+
+        list vol
+4. 결과값 중 Windows 10이 설치된 파티션에 문자가 할당되어있나 확인
+    - 필자의 경우 C드라이브에 설치했기에 C로 잡혀있음
+    - Windows 파티션과 크기가 같지만 별도의 문자가 없는 경우
+        1. 3번 볼륨이라 가정
+        2. `sel vol 3` 입력
+        3. `assign letter=C` 입력
+5. `exit` 입력 후 diskpart 종료
+6. 다음과 같은 명령어 입력
+    - C드라이브라 가정
+
+        chkdsk C: /f
+7. 디스크 검사 과정이 진행되며 raw 파티션으로 된 경우 대략 4KB 정도의 값을 복구 시도
+
+이후 정상적인 부팅이 된다면 **아주 다행히** 복구가 된 경우 입니다.
+
+## 14-3. 사소한 팁
+### 14-3-1. OpenCore 기본 항목 정하기
+제가 사용한 @bigsadan씨의 파일을 사용하였다면 `OpenCore.config` 파일 내 `MISC -> Security -> AllowSetDefault` 항목이 `true`로 되어있을 것 입니다. 이 항목을 사용한다면 OpenCore Boot Menu 화면에서 본인이 원하는 항목에 상하 방향키를 이용하여 커서를 두신 다음 `Ctrl + Enter` 키를 누르면 해당 항목이 기본 값이 됩니다.
+
+### 14-3-2. OpenCore Reset NVRAM 없애기
+`OpenCore.config` 파일 내 `MICS -> Security -> AllowNvramReset` 항목을 `false`로 하시면 Reset NVRAM 항목이 없어집니다.
+
+### ProperTree 로 plist 편하게 편집
+<a href="https://github.com/corpnewt/ProperTree" target="_blank">@corpnewt씨의 ProperTree</a> 앱을 사용하신다면 무척 편리한 GUI plist 편집기 사용이 가능합니다. Python 기반이라 Python 설치가 필요합니다. 또한 Python이 설치가 가능한 환경이면 모두 가능합니다.   
+![](assets/2021-03-29-Surface-Pro-4-Hackintosh/7.png)
+
+# 15. 여러가지 과정
+아래 내용들은 중복된 과정을 정리한 글 입니다. 필요 시 `제목`을 참조해달라고 링크와 함께 따로 언급 하겠습니다.
+
+## <a id="_Windows"></a>15-1. Windows 설치 파일로
+Windows 10 Pro 설치 파일의 경우 위에서 받은 Windows 10 Pro ISO 파일 내부에 있는 다음과 같은 폴더 및 파일들 입니다. ISO 파일 내부에는 더 많은 파일들이 있지만 전체 복사를 하셔도 무방하고, 아래와 같은 파일만 복사하셔도 무방합니다.   
+![](/assets/2021-03-29-Surface-Pro-4-Hackintosh/10.png)
+
+1. USB를 서피스 이외의 데스크톱/랩톱에 연결
+2. `_macOS` 폴더 생성 후 모든 파일 이동
+3. Windows 10 설치 파일 (혹은 _Windows 폴더 내부 파일)을 모두 USB 최상단에 복사
+4. 최종적으로 아래와 같은 구조가 탄생
+![](/assets/2021-03-29-Surface-Pro-4-Hackintosh/8.png)
+
+- 되돌아가기 링크
+    1. [11-1. Windows 10 Pro 설치 준비](#_11_1)
+    2. [14-2-1. 윈도우 부팅 불가 문제](#_14_2_1)
+
+
+## <a id="_macOS"></a>15-2. macOS 설치 파일로
+
+1. USB를 서피스 이외의 데스크톱/랩톱에 연결
+2. `_Windows` 폴더 생성 후 모든 파일 이동
+3. macOS Big Sur 설치 파일 (혹은 _macOS 폴더 내부 파일)을 모두 USB 최상단에 복사
+4. 최종적으로 아래와 같은 구조가 탄생
+![](/assets/2021-03-29-Surface-Pro-4-Hackintosh/9.png)
+
+- 되돌아가기 링크
+    1. [9-1. 디스크 유틸리티 사용 중 오류 해결](#_9_1)
+
+## <a id="_diskpart"></a>15-3. diskpart 사용하기
+### 15-3-1. Windows 사용이 불가능한 경우
+우선 상단 [Windows 10 설치 파일로](#_Windows)를 수행 해야합니다.
+
+1. USB를 서피스에 연결하고 부팅
+2. `Windows 설치` 앱이 실행된다면 `Shift + F10`을 눌러 명령 프롬프트 실행
+3. 아래와 같은 코드 입력
+
+        diskpart
+        list disk
+4. 출력값 중 본인의 서피스 디스크 용량과 같은 디스크 번호 기억
+    - 본인 모델이 256GB라면 256GB에 가장 근접한 디스크를 선택
+
+- 되돌아가기 링크
+    1. [9-1. 디스크 유틸리티 사용 중 오류 해결](#_9_1)
+    2. [14-2-1. 윈도우 부팅 불가 문제](#_14_2_1)
+
+### <a id="_diskpart_win"></a>15-3-2. Windows 사용이 가능한 경우
+1. `윈도우키 + X`를 누름
+2. `Windows Powershell (관리자)` 실행
+3. 아래와 같은 코드 입력
+
+        cmd
+        diskpart
+        list disk
+4. 출력값 중 본인의 서피스 디스크 용량과 같은 디스크 번호 기억
+    - 본인 모델이 256GB라면 256GB에 가장 근접한 디스크를 선택
+
+- 되돌아가기 링크
+    1. [12-2-2. EFI 파티션 윈도우에서 마운트](#_12_2_2)
