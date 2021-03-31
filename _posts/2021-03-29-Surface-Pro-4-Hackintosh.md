@@ -361,7 +361,7 @@ OpenCore 구성에 의해 각 파티션이 각기 다른 디스크로 인식이 
 ### <a id="_12_2_2"></a>12-2-2. Windows에서 마운트
 `EFI Mounter` 같은 서드파티 앱을 다운로드 하시거나 아래 명령어들을 통해 수동으로 가능합니다.
 
-1. ![diskpart 사용법](#_diskpart_win)을 참고
+1. [diskpart 사용법](#_diskpart_win)을 참고
 2. 아래 명령어 입력
     - 디스크0 이라 가정
 
