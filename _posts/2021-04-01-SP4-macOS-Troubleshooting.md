@@ -15,7 +15,7 @@ published: true
 ---
 Surface Pro 4에 해킨토시 Big Sur 설치하며 생길 수 있는 문제들!
 
-본 글의 메인 글은 [Surface Pro 4 Big Sur 해킨토시 무작정 따라 설치하기](https://minnote.net/Surface-Pro-4-Hackintosh) 입니다.
+본 글의 메인 글은 [Surface Pro 4 Big Sur 해킨토시 무작정 따라 설치하기](https://minnote.net/%ED%8C%81_tip/Surface-Pro-4-Hackintosh/) 입니다.
 
 # <a id="_normal"></a> 1. 기본적인 오류들
 사실 이런 오류들엔 답이 없으며 너무 무수히 많은 변수가 있습니다. 도움을 받고 싶다면 해당 로그를 `그대로` Google 에 검색해 보는 것이 좋습니다. 혹시 해결하신 명확한 답변 혹은 솔루션이 있다면 제보를 해주시면 많은 분들께 도움이 됩니다.

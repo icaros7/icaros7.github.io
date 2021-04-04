@@ -64,7 +64,7 @@ published: true
 
 이런 사유로 인하여 해킨토시만을 설치하여 사용함은 불편함이 있습니다. 저의 경우에는 Windows 10과 듀얼 부팅 (맥과 윈도우를 동시 사용)하는 환경을 구성하였습니다.
 
-또한 **macOS 설치 과정은 사실 매우 짧고 간편**합니다. 하지만 대부분이 Windows 와 듀얼 부팅 및 문제 해결을 위한 글 입니다.
+또한 **macOS 설치 과정은 사실 매우 짧고 간편**합니다. 하지만 대부분이 Windows 와 듀얼 부팅을 위한 글 입니다.
 
 # 2. 구성 환경 안내 및 다운로드
 ## 2-1. 정의
@@ -252,8 +252,8 @@ UEFI 부팅 방법, 설정 등에 관한 자세한 내용은 <a href="https://su
 <hr>
 <span style="font-size:14pt;font-weight:bold;">문제 해결</span>
 
-- <a href="https://minnote.net/SP4-macOS-Troubleshooting/#_WinHiber" target="_blank">`Windows is hibernate` 해결하기</a>
-- <a href="https://minnote.net/SP4-macOS-Troubleshooting/#_normal" target="_blank">그 외 기타 부팅 오류</a>
+- <a href="https://minnote.net/%ED%8C%81_tip/SP4-macOS-Troubleshooting//#_WinHiber" target="_blank">`Windows is hibernate` 해결하기</a>
+- <a href="https://minnote.net/%ED%8C%81_tip/SP4-macOS-Troubleshooting//#_normal" target="_blank">그 외 기타 부팅 오류</a>
 
 # 9. 디스크 유틸리티를 통한 디스크 조정
 
@@ -274,7 +274,7 @@ UEFI 부팅 방법, 설정 등에 관한 자세한 내용은 <a href="https://su
 <hr>
 <span style="font-size:14pt;font-weight:bold;">문제 해결</span>
 
-- <a href="https://minnote.net/SP4-macOS-Troubleshooting/#_diskutil" target="_blank">디스크 지우기 혹은 파티셔닝 실행 시 강제로 꺼짐</a>)
+- <a href="https://minnote.net/%ED%8C%81_tip/SP4-macOS-Troubleshooting//#_diskutil" target="_blank">디스크 지우기 혹은 파티셔닝 실행 시 강제로 꺼짐</a>)
 
 # 10. macOS Big Sur 설치 및 설정
 ## 10-1. 온라인으로부터 설치
@@ -446,7 +446,7 @@ Windows 10 Pro 설치 파일의 경우 위에서 받은 Windows 10 Pro ISO 파�
 <hr>
 <span style="font-size:14pt;font-weight:bold;">문제 해결</span>
 
-- <a href="https://minnote.net/SP4-macOS-Troubleshooting/#_raw" target="_blank">**Windows** 부팅 실패 및 파란 Recovery</a>
+- <a href="https://minnote.net/%ED%8C%81_tip/SP4-macOS-Troubleshooting//#_raw" target="_blank">**Windows** 부팅 실패 및 파란 Recovery</a>
 
 # 15. 사소한 팁
 ## 15-1. OpenCore 기본 항목 정하기
