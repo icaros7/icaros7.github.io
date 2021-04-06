@@ -33,6 +33,7 @@ published: true
 - 해킨토시에 대해 배워보고 싶음
 - macOS 를 사용 경험이 있음
 
+![](assets/2021-03-29-Surface-Pro-4-Hackintosh/12.jpeg)
 
 > **설치하게 된 계기는?**   
 
