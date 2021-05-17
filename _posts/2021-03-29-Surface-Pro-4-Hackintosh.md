@@ -1,7 +1,7 @@
 ---
 title:  "Surface Pro 4 Big Sur 해킨토시 무작정 따라 설치하기"
 categories:
-    - 팁_Tip
+    - 해킨토시_Hackintosh
 tags:
     - Surface
     - 서피스
@@ -38,8 +38,6 @@ published: true
 > **설치하게 된 계기는?**   
 
 맥북은 이미 떠나보냈지만 XCode 사용할 일이 있어 급급히 해킨토시를 설치하게 되었습니다.
-
-하지만 데스크톱의 경우 AMD 라이젠 CPU를 사용하고 있어 다소 난이도가 있을 것으로 판단되어 Surface Pro 4 모델을 이용하게 되었습니다.
 
 해킨토시의 경우 최대한 넓은 의미로 보자면 Apple 사에서 공식적으로 지원하지 않는 하드웨어에 macOS를 설치하는 행위 입니다.
 
