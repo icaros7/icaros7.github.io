@@ -113,12 +113,12 @@ published: true
 2. ~~<a href="https://github.com/bigsadan/surface-pro-4-hackintosh" target="_blank">**@bigsadan**씨의 서피스 프로 4용 OpenCore</a>~~
     - ~~위 링크로 들어가 <span style="color:green">초록색 Code 버튼</span>을 눌러주신 뒤 `Download ZIP` 을 눌러 **특정 위치**에 저장~~
     - 5월 3일 부로 macOS 11.3이 업데이트 되며 **@bigsadan**씨의 파일로 불가능. 직접 OpenCore 최신 버전을 구성 혹은 3번 파일을 사용
-3. <a href="https://github.com/icaros7/OpenCore_Surface_Pro_4" target="_blank">**@bigsadan**씨의 OpenCore를 기반으로 필자가 업데이트한 OpenCore</a>
-    - 위 링크로 들어가 <span style="color:green">초록색 Code 버튼</span>을 눌러주신 뒤 `Download ZIP` 을 눌러 **특정 위치**에 저장
+3. <a href="https://github.com/icaros7/OpenCore_Surface_Pro_4/releases/latest" target="_blank">**@bigsadan**씨의 OpenCore를 기반으로 필자가 업데이트한 OpenCore</a>
+    - 위 링크로 들어가 `Assets`을 아래 `Source code (ZIP)` 을 눌러 **특정 위치**에 저장
 4. <a href="https://github.com/corpnewt/GenSMBIOS" target="_blank">**@corpnewt**씨의 GenSMBIOS</a>
     - 위 링크로 들어가 <span style="color:green">초록색 Code 버튼</span>을 눌러주신 뒤 `Download ZIP` 을 눌러 **특정 위치**에 저장
-5. <a href="https://github.com/acidanthera/OpenCorePkg/releases/" target="_blank">OpenCorePkg</a>
-    - 위 링크로 들어가 가장 최신 글 하단의 `OpenCore-x.x.x-RELEASE.zip`을 **특정 위치**에 저장
+5. <a href="https://github.com/acidanthera/OpenCorePkg/releases/latest" target="_blank">OpenCorePkg</a>
+    - 위 링크로 들어가 `Assets`을 아래 `OpenCore-x.x.x-RELEASE.zip`을 **특정 위치**에 저장
 6. <a href="https://rufus.ie/" target="_blank">Rufus</a>
     - 위 링크로 들어가 하단 `Rufus x.xx 포터블`을 받아 바로 실행 가능
 7. <a href="https://www.microsoft.com/ko-kr/software-download/windows10" target="_blank">Windows 10 Pro ISO 파일</a>
@@ -131,7 +131,7 @@ published: true
 위 파일을 모두 다운로드 받으셨다면 본격적으로 설치 과정을 시작해 보겠습니다.
 
 # 3. **macOS** 리커버리 다운로드
-3번에서 받은 파일 중 4번째 OpenCorePkg 폴더가 기준 입니다.
+위에서 받은 파일 중 5번째 OpenCorePkg 파일을 압축 해제한 폴더가 기준 입니다.
 
 1. `Utilites 폴더` 내 `macrecovery 폴더`로 이동
 2. Shift 키를 누른채 폴더 빈 공간을 마우스 오른쪽 클릭
