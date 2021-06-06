@@ -217,17 +217,17 @@ toc: true
 1. Wipe Options // 초기화 옵션
   - Yes, I want do~ // 초기화 하기
   - `No, I want to keep~` // 초기화 하지 않기
-    - 본 글에서 이미 초기화 완료
+    + 본 글에서 이미 초기화 완료
 2. Bootanimation // 부트애니메이션 설정
   - 상위 3개의 경우 사용해 본 적이 없어 안적음
   - Samsung white bootanimation // 하얀바탕 검정글씨
   - `Samsung black bootanimation` // 검은바탕 하얀글씨
-    - Samsung 옵션들의 경우 자급제 혹은 해외 기기 구매시 뜨는 화면
+    + Samsung 옵션들의 경우 자급제 혹은 해외 기기 구매시 뜨는 화면
 3. Other // 기타 옵션
   - Backup current EFS // EFS 파티션 백업
-    - 본 글에서 이미 백업 완료
+    + 본 글에서 이미 백업 완료
   - Preserve hosts file // 사전 제공된 hosts 파일 사용
-    - 일반적 경우 불필요
+    + 일반적 경우 불필요
 
 ## 7-4. 기기 특성 선택
 ![](/assets/2021-02-16-Galaxy-S6-CustomFW/10.jpg)   
@@ -240,14 +240,14 @@ toc: true
 3. S6 Flat Devices Only // 갤럭시S6 배터리 옵션
   - Skip // 갤럭시S6 이외 (엣지, 엣지+, 노트5) 기기 사용시
   - `Stock Battery` // 배터리 개조를 하지 않은 기기의 경우
-    - **잘 모를경우 선택**
+    + **잘 모를경우 선택**
   - Extended Battery // 갤럭시S7 엣지용 3600mAh 대용량 배터리로 개조한 경우 선택
 
 ## 7-5. 통신사 관련 설정
 ![](/assets/2021-02-16-Galaxy-S6-CustomFW/11.jpg)   
 1. CSC Options // 통신사 설정 옵션
   - INT/KOR // 국제판 혹은 국내 자급제
-    - 국내 자급제는 노트5만 존재
+    + 국내 자급제는 노트5만 존재
   - `SKC` // SKT 사용 시 선택
   - KTC // KT 사용 시 선택
   - LUC // LGU 사용 시 선택
@@ -273,19 +273,19 @@ toc: true
   - `Dynamic Lockscreen` // 동적 잠금화면
   - Wifi Security // 와이파이 보안 옵션 앱
   - AdAway // 애드블록과 비슷한 광고 차단 앱을 설치
-    - Magisk 필요
+    + Magisk 필요
   - Youtube Vanced // 수정된 유튜브 앱 탑제
   - `Secure Folder` // 보안 폴더 기능
   - NaviBar/Gesture // 내비바 기능 활성
   - SamsungCovers // 삼성 스마트커버 케이스 사용시 체크
-    - 검정 화면에서 화면이 켜지지 않는 이슈 발생 가능
+    + 검정 화면에서 화면이 켜지지 않는 이슈 발생 가능
 
 ## 7-7. 폰트 설정
 ![](/assets/2021-02-16-Galaxy-S6-CustomFW/13.jpg)   
 1. Main Fonts // 기본 폰트
   - Android 10 Fonts
   - `Android 9 Fonts` // 안드로이드 9와 10의 폰트 상이
-    - 한국어의 경우 동일, 영어만 영향 받음
+    + 한국어의 경우 동일, 영어만 영향 받음
 2. Emoji // 이모티콘
   - `Samsung` // 삼성 기본 이모티콘
   - AOSP // 안드로이드 기본 이모티콘
@@ -342,11 +342,11 @@ GoodLock 옵션들 입니다. 여기서 체크 시 데이터 영역이 아닌 �
 2. Samsung Apps // 삼성 앱
   - `Samsung Calculator` // 계산기
   - `Samsung Dual Messenger` // 듀얼 메신저
-    - 본 롬에 있는 듀얼 메신저의 경우 패치 버전이라 모든 앱 복제 가능
+    + 본 롬에 있는 듀얼 메신저의 경우 패치 버전이라 모든 앱 복제 가능
   - Samsung Email // 이메일
   - `Samsung Game Launcher` // 게임 런처
   - `Samsung Game Tools` // 게임 툴즈
-    - 체크시 나중에 최 하단 [추가사항](#11.-추가-사항) 참조
+    + 체크시 나중에 최 하단 [추가사항](#11.-추가-사항) 참조
   - Samsung Music // 음악
   - `Samsung Reminder` // 리마인더
   - `Samsung Video` // 비디오
@@ -390,19 +390,18 @@ AOD, 엣지 라이트닝부터 성능과 배터리 러닝타임까지. 전 모�
 1. 특정 버전의 `Samsung Game Optimizing Service` 설치
   - 3.4.01.0 버전과 일부 버전 이외엔 설치 불능
   - 직접 파일을 3.4.01.0 버전 파일을 구하여 설치
-    - 본인 판단 아래 <a href="https://samsung-game-optimizing-service.kr.uptodown.com/android/download/3304090" target="_blank">UptoDown</a>에서도 다운로드 가능
+    + 본인 판단 아래 <a href="https://samsung-game-optimizing-service.kr.uptodown.com/android/download/3304090" target="_blank">UptoDown</a>에서도 다운로드 가능
 2. `Galaxy Store` 앱 실행 후 모든 앱 업데이트
-3. 본인의 상황에 따라 다음 따라하기
-  1. 내비바가 있는 경우
-    내비바 좌우에 게임부스터 관련 버튼이 추가 됩니다.
-  2. 내비바가 없는 경우
-    아래 두가지 상황에 따라 행동
-    - 상단바를 내리면 게임부스터 관련 알림이 있는 경우
-      해당 알림을 누르면 사용 가능
-    - 상단바를 내려도 게임부스터 관련 알림이 없는 경우
-      Data wipe 없이 롬 재설치를 통해 내비바 활성 이후, `설정 - 디스플레이 - 내비게이션바 - 제스처 사용` 설정한 뒤 다시 내비바 없이 롬 재설치
+3. 본인의 상황에 따라 다음 따라하기 (제가 모든 경우를 다 알진 못하여 적어둡니다)
+  - 내비바가 있는 경우
+    + 내비바 좌우에 게임부스터 관련 버튼이 추가 됩니다. (대부분)
+  - 내비바가 없는 경우
+    + 상단바를 내리면 게임부스터 관련 알림이 있는 경우, 해당 알림을 누르면 사용 가능 (대부분)
+    + 상단바를 내려도 게임부스터 관련 알림이 없는 경우, 롬 재설치 필요 (일부)
 
 내비바 활성 관련하여 시스템 파일 관리를 하실 수 있는 분은 아래 방법으로 조금 더 간편하게 롬 재설치 없이 가능 합니다.
+
+또한 Wipe 옵션을 `No`로 하신 채로 롬을 재설치 하시면 시스템 파일만 재설치 되므로 사용자 데이터는 보존 됩니다. 이를 이용해 만약 내비바가 없으면서 상단바를 내려도 게임부스터 알림이 없는 경우, `내비바 활성 롬 재설치 -> 설정에서 내비바를 제스처로 변경 -> 내비바 비활성 롬 재설치` 순서를 통해 내비바 없이 게임부스터 사용이 가능합니다.
 
 ## 11-2. Floyd 롬 일부 구성요소만 재구성
 시스템 파일 관리 방법을 알고 계시다면 아래와 같은 방법으로 가능 합니다.
