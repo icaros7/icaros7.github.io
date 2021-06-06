@@ -25,6 +25,8 @@ published: true
     - 문제 해결 글 분리
 - 2021년 5월 17일 14:45
     - 11.3 관련 OpenCore 0.6.9 내용 추가
+- 2021년 6월 6일 16:02
+    - Verbose 관련 옵션 추가
 
 <hr>
 
@@ -456,13 +458,18 @@ Windows 10 Pro 설치 파일의 경우 위에서 받은 Windows 10 Pro ISO 파�
 
 # 15. 사소한 팁
 ## 15-1. OpenCore 기본 항목 정하기
-제가 사용한 @bigsadan씨의 파일을 사용하였다면 `OpenCore.config` 파일 내 `MISC -> Security -> AllowSetDefault` 항목이 `true`로 되어있을 것 입니다. 이 항목을 사용한다면 OpenCore Boot Menu 화면에서 본인이 원하는 항목에 상하 방향키를 이용하여 커서를 두신 다음 `Ctrl + Enter` 키를 누르면 해당 항목이 기본 값이 됩니다.
+제가 사용한 @bigsadan씨의 파일을 사용하였다면 OpenCore의 `config.plist` 파일 내 `MISC -> Security -> AllowSetDefault` 항목이 `true`로 되어있을 것 입니다. 이 항목을 사용한다면 OpenCore Boot Menu 화면에서 본인이 원하는 항목에 상하 방향키를 이용하여 커서를 두신 다음 `Ctrl + Enter` 키를 누르면 해당 항목이 기본 값이 됩니다.
 
 ## 15-2. OpenCore Reset NVRAM 없애기
-`OpenCore.config` 파일 내 `MICS -> Security -> AllowNvramReset` 항목을 `false`로 하시면 Reset NVRAM 항목이 없어집니다.
+OpenCore의 `config.plist` 파일 내 `MICS -> Security -> AllowNvramReset` 항목을 `false`로 하시면 Reset NVRAM 항목이 없어집니다.
 
 ## 15-3. ProperTree 로 plist 편하게 편집
 <a href="https://github.com/corpnewt/ProperTree" target="_blank">@corpnewt씨의 ProperTree</a> 앱을 사용하신다면 무척 편리한 GUI plist 편집기 사용이 가능합니다. Python 기반이라 Python 설치가 필요합니다. 또한 Python이 설치가 가능한 환경이면 모두 가능합니다.   
 ![](assets/2021-03-29-Surface-Pro-4-Hackintosh/7.png)
 
 이 편한 것을 왜 안알려주었냐...라고 하시면 설치 과정에서 **@bigsadan**씨의 파일을 이용하시며 실제로 수정할 것이 별로 없어 그냥 메모장으로 하였습니다.
+
+## 15-4. 이쁜 부팅화면 사용하기 (Verbose 옵션)
+만일 사전구성된 제 OpenCore를 사용하시는 경우 아마 boot-args에 `-v` 옵션이 기본적으로 포함되어 부팅시 검은 화면에 흰 로그들이 주르르 올라갈 것 입니다.
+
+이는 처음 여러차례 삽질시 디버깅을 쉽게 하기위하여 활성화하여 둔 것 이므로 정상 사용이 가능한 상태에 오셨다면 불필요한 기능 입니다. 따라서 OpenCore의 `config.plist`에서 `NVRAM -> ADD -> 7C436110-AB2A-4BBB-A880-FE41995C9F82 -> boot-args` 의 값 중 `-v`를 지워주시면 출력되는 로그가 숨겨집니다.
