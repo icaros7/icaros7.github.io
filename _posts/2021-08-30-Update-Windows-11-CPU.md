@@ -61,7 +61,7 @@ toc: true
 
 이는 Windows 10에서 보안을 목적으로 기존 선택적으로 고를 수 있었던 HVCI(Hypervisor-Enforced Code Integrity) 기능을 Windows 11 에서는 기본 값으로 사용하게 되었습니다. 이로 인하여 기본적으로 해당 명령어를 지원하지 않는 CPU들이 자연스럽게 지원이 되지 않았습니다.
 
-![](../assets/2021-08-30-Update-Windows-11-CPU/1.png)
+![](/assets/2021-08-30-Update-Windows-11-CPU/1.png)
 
 물론 해당 명령어가 없는 CPU 일지언정 Windows 11 최소 사양을 만족한다면 Windows 11 실제 사용도 가능하며, 해당 기능을 활성화 할 수 있습니다. 하지만 명령어를 통해 성능 저하를 최소화 한 CPU들과 다르게 모든 연산이 CPU에 부하를 주어 성능 저하가 상당하다고 합니다.
 
