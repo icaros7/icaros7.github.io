@@ -145,11 +145,10 @@ ssh-keygen -t rsa -b 4096 -C "hominlab@gmail.com"
 git config 를 위한 자주 사용하는 설정 들. 중간에 사용자 이름과 이메일에 본인 값을 넣어주면 된다.
 
 ```
-git config --global \
-user.name "iCAROS7" \
-user.email "hominlab@gmail.com" \
-init.defaultBranch main \
-pull.rebase false
+git config --global user.name "iCAROS7"
+git config --global user.email "hominlab@gmail.com"
+git config --global init.defaultBranch main
+git config --global pull.rebase false
 ```
 
 ---
