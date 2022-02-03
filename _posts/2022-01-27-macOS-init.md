@@ -108,6 +108,8 @@ zsh-syntax-highlighting
 ## 공통 패키지
 ```
 brew install \
+neovim \
+ruby \
 --cask yt-music \
 --cask discord \
 --cask between \
