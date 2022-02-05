@@ -53,6 +53,7 @@ choco install 7zip.install --version 21.7 -y
 choco install python3 --version 3.10.2 -y
 choco install vlc --version 3.0.16 -y
 choco install curl --version 7.81.0 -y
+choco install msys2 --version 20220128.0.0 -y
 ```
 
 # 3. 수동 설치 패키지
