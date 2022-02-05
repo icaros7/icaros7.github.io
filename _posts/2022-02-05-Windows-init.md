@@ -98,6 +98,7 @@ CapsLock 키를 한영키로, 백슬레시(`\`)키를 백스페이스 키로
 "RealTimeIsUniversal"=dword:00000001
 ```
 
+---
 # 6. 재부팅 및 WSL용 64비트 커널 업데이트 설치
 5번까지 다 완료가 되었다면 1회 재부팅 이후 [여기](https://docs.microsoft.com/en-us/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package)를 참조하여 WSL용 64비트 커널 업데이트를 설치
 
@@ -125,6 +126,7 @@ sudo -s apt upgrade -y
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+---
 # 8. powerlevel10k 및 최애 플러그인 설치
 ## 폰트 설치
 `powerlevel10k`의 경우 강력히 권장되는 폰트인 `MesloLGS NF` 폰트 설치 요구
@@ -160,6 +162,7 @@ alias workdir="cd /mnt/e/workspace"
 
 이후 `source ~/.zshrc`를 통해 수정한 zshrc를 불러옵니다.
 
+---
 # 9. git 기본 설정
 git config 를 위한 자주 사용하는 설정 들. 중간에 사용자 이름과 이메일에 본인 값을 넣어주면 된다.
 
