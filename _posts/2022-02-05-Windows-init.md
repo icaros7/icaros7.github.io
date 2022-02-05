@@ -26,7 +26,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # 2. Chcolatey 패키지 설치
 시간이 상당 소요되므로 먼저 설치를 진행한다.
-아래는 필자가 자주 사용하는 패키지 이며, [이 스크립트](assets/2022-02-05-Windows-init/packages.config)를 다운로드 받아 사용 할 경우 한줄로 해결이 된다.
+아래는 필자가 자주 사용하는 패키지 이며, [이 스크립트](https://raw.github.com/icaros7/icaros7.github.io/main/assets/2022-02-05-Windows-init/packages.config)를 다운로드 받아 사용 할 경우 한줄로 해결이 된다.
 
 혹시 `JetBrains Rider` 설치가 다 되었음에도 무한 루프에 빠진다면 작업 관리자에서 `JetBrains Rider AfterInstall` 이런 비슷한 프로세스명을 가진 프로세스를 종료 하면 된다.
 
@@ -72,7 +72,7 @@ choco install msys2 --version 20220128.0.0 -y
 wsl --install -d Debian
 ```
 # 5. 사용 레지스트리 등록
-아래는 자주 사용하는 레지스트리 이다. 필자는 원드라이브에 넣어두고 사용하지만 혹시 몰라 [여기서](assets/2022-02-05-Windows-init/Cpas+UniversialTime.reg) 받을 수 있다.
+아래는 자주 사용하는 레지스트리 이다. 필자는 원드라이브에 넣어두고 사용하지만 혹시 몰라 [여기서](https://raw.github.com/icaros7/icaros7.github.io/main/assets/2022-02-05-Windows-init/Cpas+UniversialTime.reg) 받을 수 있다.
 
 ## 키보드 리맵핑
 CapsLock 키를 한영키로, 백슬레시(`\`)키를 백스페이스 키로
