@@ -1,0 +1,15 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\TimeZoneInformation]
+"RealTimeIsUniversal"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
+"Scancode Map"=hex:\
+00,00,00,00,\
+00,00,00,00,\
+05,00,00,00,\
+38,e0,3a,00,\
+3a,00,38,e0,\
+0e,00,2b,00,\
+2b,00,0e,00,\
+00,00,00,00
