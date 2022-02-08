@@ -16,16 +16,14 @@ published: true
 안녕하세요. 매번 여러 운영체제를 재설치 한 뒤 초기 설정은 가장 귀찮은 작업 중 하나 입니다. 이를 위해 필자의 기본 설정을 공유를 겸한 스스로를 위한 메모 차 남겨 둡니다.
 
 
-# 1. Xcode.app 직접 다운로드
-가장 오래 걸리는 걸 가장 먼저 해야한다. 앱스토어에서 설치 시 무척 오래 걸리며 종종 설치 실패가 뜨는 경우가 있다. 이럴 경우 [애플 개발자 다운로드 페이지](https://developer.apple.com/download/all/)에서 `Xcode`를 직접 다운로드 받으면 해결
+# 1. Xcode.app 및 커맨드라인 도구 직접 다운로드
+가장 오래 걸리는 걸 가장 먼저 해야한다. 앱스토어에서 설치 시 무척 오래 걸리며 종종 설치 실패가 뜨는 경우가 있다. 이럴 경우 [애플 개발자 다운로드 페이지](https://developer.apple.com/download/all/)에서 `Xcode` 및 `Command Line Tools for Xcode`를 직접 다운로드 받으면 해결
 
 # 2. Oh-My-Zsh 설치
 [ohmyz.sh](https://ohmyz.sh/#install) 접속 후 아래 명령어 복사
 ```
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-
-이와 동시에 개발자 명령어 커맨드 라인 설치 확인 창 뜰 경우 설치. 설치에 시간이 소요 되므로 4번 부터 하고 있으면 좋다.
 
 # 3. powerlevel10k 및 최애 플러그인 설치
 `powerlevel10k`의 경우 강력히 권장되는 폰트인 `MesloLGS NF` 폰트 설치 요구
@@ -98,7 +96,7 @@ zsh-syntax-highlighting
 ```
 
 # 6. brew 설치하기
-위 과정에서 커맨드라인 도구가 설치되어야 한다. [brew.sh](https://brew.sh/index_ko) 에서 설치 진행
+[brew.sh](https://brew.sh/index_ko) 에서 설치 진행
 
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -108,20 +106,20 @@ zsh-syntax-highlighting
 ## 공통 패키지
 ```
 brew install \
-neovim \
-ruby \
 --cask yt-music \
 --cask discord \
 --cask between \
 --cask intellij-idea \
 --cask rider \
 --cask visual-studio-code \
---cask authy \
 --cask adguard \
 --cask scroll-reverser \
 --cask keka \
+--cask authy \
 --cask microsoft-remote-desktop \
 --cask microsoft-edge
+
+brew install neovim ruby
 ```
 
 ## 맥북 혹은 랩톱 환경 용
@@ -154,4 +152,4 @@ git config --global pull.rebase false
 ```
 
 ---
-수정: 2022.02.03 15:39
+수정: 2022.02.05 03:00
