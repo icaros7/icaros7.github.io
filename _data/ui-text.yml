@@ -270,9 +270,10 @@ pt: &DEFAULT_PT
   search_algolia_no_results  :
 pt-PT:
   <<: *DEFAULT_PT
+
 # Brazilian Portuguese
 pt-BR:
- skip_links                 : "Pular links"
+  skip_links                 : "Pular links"
   skip_primary_nav           : "Pular para navegação primária"
   skip_content               : "Pular para conteúdo"
   skip_footer                : "Pular para rodapé"
