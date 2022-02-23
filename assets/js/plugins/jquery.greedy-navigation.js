@@ -98,10 +98,7 @@ $(function() {
 
   $btn.on('click', function() {
     $hlinks.toggleClass('hidden');
-<<<<<<< HEAD
-=======
     $(this).toggleClass('close');
->>>>>>> minimal/master
     clearTimeout(timer);
   });
 
@@ -125,9 +122,4 @@ $(function() {
     } else check();
   // if page does not have a logo just check
   } else check();
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> minimal/master
 });
