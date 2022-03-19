@@ -9,9 +9,9 @@ published: true
 [DreamHack.io] rev-basic-0 풀이
 
 # 환경
-CPU: Apple M1
-OS: Microsoft Windows 11 on ARM
-Tools: IDA
+CPU: Apple M1   
+OS: Microsoft Windows 11 on ARM   
+Tools: IDA   
 
 # 문제
 URL: [https://dreamhack.io/wargame/challenges/14/](https://dreamhack.io/wargame/challenges/14/)
