@@ -81,7 +81,7 @@ https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 sudo -s dpkg -i *.deb
 ```
 
-## Ubuntu 16.04/18.04
+### Ubuntu 16.04/18.04
 ````
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
