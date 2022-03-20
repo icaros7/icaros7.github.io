@@ -144,7 +144,7 @@ sudo -s systemctl restart xrdp
 포트포워딩을 위한 iptables 설정
 ```
 # 포트포워딩 추가
-sudo -s iptables -t nat -A PREPROUTING -i {인터페이스 이름} -p tcp --dport {외부 포트} -j REDIRECT --to-port {내부 포트}
+sudo -s iptables -t nat -A PREROUTING -i {인터페이스 이름} -p tcp --dport {외부 포트} -j REDIRECT --to-port {내부 포트}
 
 # 포트포워딩 리스트
 sudo -s iptables -t nat -L --line-numbers
