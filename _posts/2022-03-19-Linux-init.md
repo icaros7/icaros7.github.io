@@ -47,7 +47,10 @@ sudo -s apt upgrade
 
 ## 공통 패키지
 ```
-sudo -s apt install neovim zsh gcc python python-pip python-dev xrdp net-tools -y
+sudo -s apt install neovim zsh gcc python python-pip python-dev xrdp net-tools ufw iptables -y
+
+# Oh-My-Zsh 설치
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## 데스크톱 환경 설치
@@ -135,6 +138,27 @@ sudo -s systemctl restart ssh.service
 sudo -s vim /etc/xrdp/xrdp.ini
 
 sudo -s systemctl restart xrdp
+```
+
+## iptables
+포트포워딩을 위한 iptables 설정
+```
+# 포트포워딩 추가
+sudo -s iptables -t nat -A PREPROUTING -i {인터페이스 이름} -p tcp --dport {외부 포트} -j REDIRECT --to-port {내부 포트}
+
+# 포트포워딩 리스트
+sudo -s iptables -t nat -L --line-numbers
+
+# 포트포워딩 삭제 with Number
+sudo -s iptables -t nat -D -PREROUTING {Number}
+```
+
+## UFW
+```
+sudo -s ufw enable
+
+# (내부) 포트 허용
+sudo -s ufw allow {내부 포트}
 ```
 
 ## 보안 공부
