@@ -57,7 +57,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 주로 Server 이미지를 사용하므로 xrdp 사용을 위해 `MATE` 데스크톱 환경을 설치.
 
 ```
-sudo -s apt install tasksel
+sudo -s apt install tasksel -y
 sudo -s tasksel install ubuntu-mate-core
 ```
 
