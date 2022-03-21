@@ -21,6 +21,6 @@ URL: [https://dreamhack.io/wargame/challenges/15/](https://dreamhack.io/wargame/
 # 풀이
 지난 `rev-basic-0`과 마찬가지로 슈도 코드를 통해 유추.
 
-![](../assets/DreamHack/rev-basic-1.png)
+![](/assets/DreamHack/rev-basic-1.png)
 
 `sub_140001000` 에서 위와 같이 문자열 체크 하는 것을 확인
