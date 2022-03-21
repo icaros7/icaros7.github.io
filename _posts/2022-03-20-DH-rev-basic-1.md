@@ -11,7 +11,7 @@ published: true
 # 환경
 CPU: Apple M1   
 OS: Microsoft Windows 11 on ARM   
-Tools: Hey-Rays IDA 7.5   
+Tools: Hex-Rays IDA 7.5   
 
 # 문제
 URL: [https://dreamhack.io/wargame/challenges/15/](https://dreamhack.io/wargame/challenges/15/)
