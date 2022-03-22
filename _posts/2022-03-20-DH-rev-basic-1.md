@@ -51,7 +51,7 @@ URL: [https://dreamhack.io/wargame/challenges/15/](https://dreamhack.io/wargame/
 ![](/assets/DreamHack/rev-basic-1-3.png)   
 이를 확인 하기 위해 확인 call subroutin 부분에 Breakpoint를 걸고 Step into 시 사용자 Input 값의 모든 자리 수에 대하여 `cmp`를 통해 특정 문자와 비교 하는 것으로 확인 함.
 
-또한 지난 `rev-basic-0`과 마찬가지로 IDA를 통해 디컴파일 된 Pseudo Code를 통해 유추됨.
+또한 지난 `rev-basic-0`과 마찬가지로 IDA를 통해 디컴파일 된 Pseudo Code를 통해 확인 가능.
 
 ![](/assets/DreamHack/rev-basic-1.png)
 
