@@ -49,7 +49,7 @@ zsh-syntax-highlighting
 # 4. 한국어 키보드 ₩ 원화 기호 대신 ` 백쿼트 사용하기
 [원본 글](http://www.devkuma.com/books/pages/1173) 참조
 
-`~/Library/KeyBindings/DefaultkeyBindings.dict` 파일 생성 및 아래 항목 추가
+`~/Library/KeyBindings/DefaultkeyBinding.dict` 파일 생성 및 아래 항목 추가
 
 ```
 {
