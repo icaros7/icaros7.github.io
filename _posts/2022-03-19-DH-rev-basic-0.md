@@ -4,11 +4,12 @@ categories:
     - DreamHack.io
 tags:
     - dreamhack.io
+toc: true
 published: true
 ---
 [DreamHack.io] rev-basic-0 풀이
 
-# 환경
+# Environments
 
 |Name|Config|
 |:---:|:---|
@@ -20,10 +21,18 @@ published: true
 # 문제
 URL: [https://dreamhack.io/wargame/challenges/14/](https://dreamhack.io/wargame/challenges/14/)
 
+![](/assets/DreamHack/rev-basic-0-4.png)   
+```
+Get Input
+Print Wrong 또는 Correct
+```
+
+요약: MSVC++ 2019 AMD64 어플리케이션 `chall0.exe` 로부터 `correct` 를 출력 할 수 있는 문자열을 찾기
+
+# File Format
 ![](/assets/DreamHack/rev-basic-0-3.png)
 
-문제 형식: MSVC++ 2019 Windows 64 bit executable   
-요약: MSVC++ 2019 AMD64 어플리케이션 `chall0.exe` 로부터 `correct` 를 출력 할 수 있는 문자열을 찾기
+Upx not packed MSVC++ Windows 64 bit executable
 
 # checksec
 
