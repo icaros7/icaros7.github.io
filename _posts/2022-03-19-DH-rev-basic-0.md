@@ -20,6 +20,23 @@ URL: [https://dreamhack.io/wargame/challenges/14/](https://dreamhack.io/wargame/
 
 요약: MSVC++ 2019 AMD64 어플리케이션 `chall0.exe` 로부터 `correct` 를 출력 할 수 있는 문자열을 찾기
 
+# checksec
+|Name|Status|
+|:---:|:---|
+|Dynamic Base|Present|
+|ASLR|Present|
+|High Entropy VA|Present|
+|Force Integrity|NotPresent|
+|Isolation|Present|
+|NX|Present|
+|SEH|Present|
+|CFG|NotPresent|
+|RFG|NotPresent|
+|SafeSEH|NotApplicable|
+|GS|Present|
+|Authenticode|NotPresent|
+|.NET|NotPresent|
+
 # 풀이
 ![](/assets/DreamHack/rev-basic-0-1.png)
 
