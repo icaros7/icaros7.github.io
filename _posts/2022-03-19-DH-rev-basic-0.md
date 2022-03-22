@@ -9,6 +9,7 @@ published: true
 [DreamHack.io] rev-basic-0 풀이
 
 # 환경
+
 |Name|Config|
 |:---:|:---|
 |CPU|Apple M1|
