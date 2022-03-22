@@ -16,7 +16,9 @@ Tools: Hex-Rays IDA 7.5
 # 문제
 URL: [https://dreamhack.io/wargame/challenges/14/](https://dreamhack.io/wargame/challenges/14/)
 
-요약: AMD64 어플리케이션 `chall0.exe` 로부터 `correct` 를 출력 할 수 있는 문자열을 찾기
+![](/assets/DreamHack/rev-basic-0-3.png)
+
+요약: MSVC++ 2019 AMD64 어플리케이션 `chall0.exe` 로부터 `correct` 를 출력 할 수 있는 문자열을 찾기
 
 # 풀이
 ![](/assets/DreamHack/rev-basic-0-1.png)
