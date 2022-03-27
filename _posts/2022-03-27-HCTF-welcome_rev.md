@@ -7,7 +7,7 @@ tags:
 toc: true
 published: true
 ---
-[DreamHack.io] rev-basic-1 풀이
+[HackCTF] Welcome_REV 풀이
 
 # Environments
 
