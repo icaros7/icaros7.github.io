@@ -1,7 +1,7 @@
 ---
 title:  "[DreamHack.io] rev-basic-0 풀이"
 categories:
-    - DreamHack.io
+    - Reversing
 tags:
     - dreamhack.io
 toc: true
