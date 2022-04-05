@@ -47,6 +47,10 @@ Print You are on the right way! 또는 eah dude! You win!
 - Can overwrite GOT
 
 # Solution
+![](/assets/HCTF/bof_basic-0-7.png)
+
+우선 서버가 다행히 매번 같은 `[check]`를 반환 한다.
+
 ![](/assets/HCTF/bof_basic-0-3.png)
 
 우선 Function 정보를 `info func`를 통해 확인 함. system func call 이 이루어지므로 해당 func을 호출하는 것을 목표로 정함.
