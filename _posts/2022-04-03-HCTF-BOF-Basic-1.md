@@ -19,18 +19,18 @@ published: true
 |Tools|- gdb-peda<br/>- Hex-Rays IDA 7.5|
 
 # Problem
-![](/assets/HCTF/bof_basic-0.png)
+![](/assets/HCTF/bof_basic-0-0.png)
 ```
-Get Input Buffer
+Get Input
 Print You are on the right way! 또는 eah dude! You win!
 ```
 
 요약: `bof_basic`, `nc ctf.j0n9hyun.xyz 3000` 으로부터 flag 찾기
 
 # File Format
-![](/assets/HCTF/bof_basic-1.png)
+![](/assets/HCTF/bof_basic-0-1.png)
 
-![](/assets/HCTF/bof_basic-2.png)
+![](/assets/HCTF/bof_basic-0-2.png)
 
 > x86 ELF LSB Executable, Not Stripped, Not UPX Packed
 
@@ -46,16 +46,16 @@ Print You are on the right way! 또는 eah dude! You win!
 
 - Can overwrite GOT
 
-# 풀이
-![](/assets/HCTF/bof_basic-3.png)
+# Solution
+![](/assets/HCTF/bof_basic-0-3.png)
 
 우선 Function 정보를 `info func`를 통해 확인 함. system func call 이 이루어지므로 해당 func을 호출하는 것을 목표로 정함.
 
-![](/assets/HCTF/bof_basic-4.png)
+![](/assets/HCTF/bof_basic-0-4.png)
 
 main func를 우선 분석 살펴봄. `fgets`로 String 입려 받고, `0xdeadbeef` 와 `cmp` (Compare) 와 `jne` (Jump Not Equal)로 값 비교 후 일치 하지 않는 경우 `0x804857c`로 Jump 한다. 그렇다면 값이 Equal 하다면 순차적으로 진행된다는 뜻.
 
-![](/assets/HCTF/bof_basic-5.png)
+![](/assets/HCTF/bof_basic-0-5.png)
 
 IDA를 통해 Static Analysis 시도. `jne` 할 경우 (10번째 행) "You are on the right way!" 라는 메시지가 반겨줌.
 
@@ -84,4 +84,4 @@ p.interactive() # Prevent closing shell
 ```
 
 # Result
-![](/assets/HCTF/bof_basic-6.png)
+![](/assets/HCTF/bof_basic-0-6.png)
