@@ -22,7 +22,7 @@ published: true
 ![](/assets/HCTF/bof_basic-1-0.png)
 ```
 Get Input
-Print 하아아아아아아아앙 또는 eah dude! You win!
+Print 하아아아아아아아앙
 ```
 
 요약: `bof_basic2`, `nc ctf.j0n9hyun.xyz 3001` 으로부터 flag 찾기
