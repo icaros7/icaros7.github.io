@@ -31,8 +31,8 @@ sudo -s apt install vim curl git -y
 sudo -s vim /etc/apt/sources.list
 
 
-# mirror.harukasan.org 으로 변경
-:%s/deb.debian.org/mirror.harukasan.org/
+# ftp.harukasan.org 으로 변경
+:%s/deb.debian.org/ftp.harukasan.org/
 
 # mirror.kakao.com 으로 변경
 :%s/deb.debian.org/mirror.kakao.com/
@@ -63,7 +63,7 @@ sudo -s tasksel install ubuntu-mate-core
 
 ## 보안 공부 환경
 ```
-sudo -s apt install libc6-dbg libc6:i386 libc6-dbg:i386 git libssl-dev libffi-dev build-essential gcc-multilib
+sudo -s apt install libc6-dbg libssl-dev libffi-dev build-essential gcc-multilib -y
 python2 -m pip install --upgrade pip==20.3.4
 python2 -m pip install --upgrade pwntools
 ```
@@ -163,7 +163,7 @@ sudo -s ufw allow {내부 포트}
 
 ## 보안 공부
 ```
-cp ~/checksec.sh/checksec /usr/local/bin
+sudo -s cp ~/checksec/checksec /usr/local/bin
 cp ~/Pwngdb/.gdbinit ~/
 echo "source ~/peda/peda.py" >> ~/.gdbinit
 ```
