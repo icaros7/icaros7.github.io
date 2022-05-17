@@ -73,21 +73,16 @@ python2 -m pip install --upgrade pwntools
 [MesloLGS NF 폰트 다운로드 페이지](https://github.com/romkatv/powerlevel10k/blob/master/font.md#manual-font-installation)
 
 ```
-sudo -s apt install bat
-
-# lsd amd64
+# lsd for amd64
 wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 
-# lsd arm64
-https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+# lsd for arm64
+wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 
-sudo -s dpkg -i *.deb
-```
+# lsd for 16.04/18.04
+wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 
-### Ubuntu 16.04/18.04
-````
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
-wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 
 sudo -s dpkg -i *.deb
 ````
@@ -115,13 +110,14 @@ git clone git://github.com/Mipu94/peda-heap.git ~/peda-heap
 zsh-autosuggestions
 zsh-syntax-highlighting
 
+alias workdir="cd /home/icaros7/workspace"
 alias vim="nvim"
 alias vi="nvim"
-alias ls="lsd --no-symlink"
-alias ll="lsd -l --no-symlink"
+alias lll="ls -al --no-symlink --group-dirs=first"
+alias ll="lsd -l --no-symlink --group-dirs=first"
+alias ls="lsd -al --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
 alias cat="bat"
-alias workdir="cd /home/icaros7/workspace"
 
 source ~/.*rc
 ```
