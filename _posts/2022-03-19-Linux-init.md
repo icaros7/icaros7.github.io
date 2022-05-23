@@ -113,7 +113,7 @@ zsh-syntax-highlighting
 alias workdir="cd /home/icaros7/workspace"
 alias vim="nvim"
 alias vi="nvim"
-alias lll="ls -al --no-symlink --group-dirs=first"
+alias lll="lsd -al --no-symlink --group-dirs=first"
 alias ll="lsd -l --no-symlink --group-dirs=first"
 alias ls="lsd -al --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
