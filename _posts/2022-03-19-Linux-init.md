@@ -47,7 +47,11 @@ sudo -s apt upgrade
 
 ## 공통 패키지
 ```
+# 20.04 / 18.04
 sudo -s apt install neovim zsh gcc python python-pip python-dev xrdp net-tools ufw iptables -y
+
+# 16.04
+sudo -s apt install zsh gcc python python-pip python-dev net-tools -y
 
 # Oh-My-Zsh 설치
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -77,11 +81,14 @@ python2 -m pip install --upgrade pwntools
 wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
 
 # lsd for arm64
-wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_arm64.deb
 
-# lsd for 16.04/18.04
-wget https://github.com/Peltoche/lsd/releases/download/0.21.0/lsd_0.21.0_amd64.deb
+# bat for 20.04
+sudo -s apt install bat -y
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
+# bat for 16.04 / 18.04 amd64
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 
 sudo -s dpkg -i *.deb
@@ -101,7 +108,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/longld/peda.git ~/peda
 git clone https://github.com/slimm609/checksec.sh ~/checksec
 git clone https://github.com/scwuaptx/Pwngdb.git ~/Pwngdb
-git clone git://github.com/Mipu94/peda-heap.git ~/peda-heap
+git clone https://github.com/Mipu94/peda-heap.git ~/peda-heap
 ```
 
 # 5. 설치한 패키지 및 기타 설정
