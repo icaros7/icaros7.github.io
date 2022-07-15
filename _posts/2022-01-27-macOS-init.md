@@ -64,8 +64,8 @@ zsh-syntax-highlighting
 
 ```
 <!--
-  31: \, |
-  2A: Backspace
+  31: \, 2A: Backspace
+  E6: R_Option, 49: Insert
 -->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -79,7 +79,15 @@ zsh-syntax-highlighting
         <string>property</string>
         <string>--set</string>
         <string>{"UserKeyMapping":[
-          {
+	  {
+            "HIDKeyboardModifierMappingSrc": 0x7000000E6,
+            "HIDKeyboardModifierMappingDst": 0x700000049
+          },
+	  {
+            "HIDKeyboardModifierMappingSrc": 0x700000049,
+            "HIDKeyboardModifierMappingDst": 0x7000000E6
+          },
+	  {
             "HIDKeyboardModifierMappingSrc": 0x700000031,
             "HIDKeyboardModifierMappingDst": 0x70000002A
           },
@@ -152,4 +160,4 @@ git config --global pull.rebase false
 ```
 
 ---
-수정: 2022.02.05 03:00
+수정: 2022.07.15 14:00
