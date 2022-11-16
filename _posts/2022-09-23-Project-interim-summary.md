@@ -9,7 +9,7 @@ tags:
     - memory
     - heap
     - exploit
-toc: true
+toc: false
 published: true
 ---
 
