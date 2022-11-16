@@ -1,7 +1,7 @@
 ---
 title:  "[따라하기] Windows 에서 Zsh 및 Oh My Zsh 사용하기"
 categories:
-    - 팁_Tip
+    - TIPs-Windows
 tags:
     - 따라하기
     - bash

@@ -1,7 +1,7 @@
 ---
 title:  "블로그를 이사 중 입니다."
 categories:
-    - 공지사항_Notices
+    - Notices
 tags:
     - 블로그_개편
 ---

@@ -1,7 +1,7 @@
 ---
 title:  "[뉴스] Windows 11 공식 지원 CPU 추가"
 categories:
-    - 뉴스_News
+    - TIPs-News
 tags:
     - 윈도우11
     - 라이젠

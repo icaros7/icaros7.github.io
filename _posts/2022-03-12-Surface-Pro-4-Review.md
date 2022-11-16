@@ -1,7 +1,7 @@
 ---
 title:  "Microsoft Surface Pro 4 5년 롱-텀 사용 후기 (서피스는 내게 적합할까?)"
 categories:
-    - 리뷰_Review
+    - Review
 tags:
     - 리뷰
     - 마이크로소프트

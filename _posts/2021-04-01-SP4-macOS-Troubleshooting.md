@@ -1,7 +1,7 @@
 ---
 title:  "Surface Pro 4 Big Sur 해킨토시 문제 해결 및 도움"
 categories:
-    - 해킨토시_Hackintosh
+    - Hackintosh
 tags:
     - Surface
     - 서피스

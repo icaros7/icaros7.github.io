@@ -1,7 +1,7 @@
 ---
 title: "[따라하기] Windows 설치 파일 4GB 미만으로 압축 하여 FAT32에 넣기"
 categories:
-    - 팁_Tip
+    - TIPs-Windows
 tags:
     - 따라하기
     - 윈도우

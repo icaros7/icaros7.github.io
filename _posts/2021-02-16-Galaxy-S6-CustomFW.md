@@ -1,7 +1,7 @@
 ---
 title:  "갤럭시S6 (SM-G920S) 커스텀 안드로이드 9.0 (OneUI 1.0) 설치하기"
 categories:
-    - 안드로이드_Android
+    - TIPs-Android
 tags:
     - G920S
     - G920K

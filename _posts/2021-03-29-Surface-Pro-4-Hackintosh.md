@@ -1,7 +1,7 @@
 ---
 title:  "Surface Pro 4 Big Sur 해킨토시 무작정 따라 설치하기"
 categories:
-    - 해킨토시_Hackintosh
+    - Hackintosh
 tags:
     - Surface
     - 서피스

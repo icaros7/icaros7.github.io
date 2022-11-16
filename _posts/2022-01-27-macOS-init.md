@@ -1,7 +1,7 @@
 ---
 title:  "macOS 기본 설정 및 팁.md"
 categories:
-    - 팁_Tip
+    - TIPs-macOS
 tags:
     - 따라하기
     - bash
