@@ -4,7 +4,7 @@ categories:
     - iCAROS7 Works
 tags:
     - workshop
-toc: true
+toc: false
 published: true
 ---
 진로를 고민중인 학생들에게 전하고 싶은 이야기1 - IoT와 AI를 겸하는 임베디드 개발자
