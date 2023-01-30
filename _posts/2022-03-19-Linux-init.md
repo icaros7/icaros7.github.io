@@ -52,6 +52,9 @@ sudo -s vim /etc/apt/sources.list
 # 3. 필수 패키지 설치
 ## 공통 패키지
 ```
+# Add neovim stable PPA
+sudo -s add-apt-repository ppa:neovim-ppa/stable -y
+
 # Ubuntu 18.04 or higher
 sudo -s apt install neovim zsh python python2 xrdp net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
