@@ -188,6 +188,13 @@ sudo -s ufw allow {내부 포트}
 sudo -s cp $HOME/checksec/checksec /usr/local/bin && cp $HOME/Pwngdb/.gdbinit $HOME/ && echo "source $HOME/peda/peda.py" >> $HOME/.gdbinit
 ```
 
+## tmux color scheme
+`~/.tmux.conf`에 내용 추가
+```
+set -g default-terminal "xterm"
+set -g default-terminal "xterm-256color"
+```
+
 # 6. ssh 인증서 생성
 아래 명령어를 통해 rsa4096으로 생성 가능. 중간 이메일이 적힌 곳에 본인 이메일을 적으면 된다.
 
@@ -208,7 +215,8 @@ git config --global user.name "iCAROS7" && git config --global user.email "homin
 mkdir -p $HOME/.config/nvim && touch $HOME/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-
+```
+```
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -267,7 +275,7 @@ tlin llvm make markdown markdown_inline python r ruby sql yaml vim
 ```
 
 # 9. Parallels Tools 설치
-먼저 Parallels에서 Tool Install image를 마운트 해야한다.
+먼저 Parallels에서 Tool Install image를 마운트 해야한다. 혹시 ISO 파일이 필요하다면 Parallels.app/Contents/resource/tool 내에 있다.
 
 ```
 sudo -s mkdir /mnt/cdrom && sudo -s mount /dev/cdrom /mnt/cdrom && sudo -s /mnt/cdrom/install
