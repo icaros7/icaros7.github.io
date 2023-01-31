@@ -57,10 +57,10 @@ sudo -s add-apt-repository ppa:neovim-ppa/stable -y
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
 
 # Ubuntu 18.04 or higher
-sudo -s apt install neovim zsh python3 python2 xrdp net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
+sudo -s apt install neovim zsh python3 python2 xrdp net-tools tmux htop build-essential gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
 # Ubuntu 16.04
-sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system-y
+sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop build-essential gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system-y
 
 # Oh-My-Zsh 설치
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -272,8 +272,7 @@ CocInstall coc-clangd coc-r-lsp coc-pyright coc-html coc-java coc-tsserver coc-j
 
 ## TreeSitter 문법
 ```
-SInstall arduino bash c c_sharp cmake cpp css dockerfile git_rebase gitcommit gitignore go html java javascript json json5 ko
-tlin llvm make markdown markdown_inline python r ruby sql yaml vim
+TSInstall arduino bash c c_sharp cmake cpp css dockerfile git_rebase gitcommit gitignore go html java javascript json json5 kotlin llvm make markdown markdown_inline python r ruby sql yaml vim
 ```
 
 # 9. Parallels Tools 설치
