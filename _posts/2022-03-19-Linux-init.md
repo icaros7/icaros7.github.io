@@ -52,11 +52,12 @@ sudo -s vim /etc/apt/sources.list
 # 3. 필수 패키지 설치
 ## 공통 패키지
 ```
-# Add neovim stable PPA
+# Add neovim stable and nodejs LTS PPA
 sudo -s add-apt-repository ppa:neovim-ppa/stable -y
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
 
 # Ubuntu 18.04 or higher
-sudo -s apt install neovim zsh python python2 xrdp net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
+sudo -s apt install neovim zsh python3 python2 xrdp net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
 # Ubuntu 16.04
 sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system-y
@@ -147,8 +148,6 @@ alias ll="lsd -l --no-symlink --group-dirs=first"
 alias ls="lsd -al --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
 alias cat="batcat"
-
-source ~/.*rc
 ```
 
 ## OpenSSH Server
