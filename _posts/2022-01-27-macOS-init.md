@@ -110,6 +110,7 @@ mkdir ~/Library/LaunchAgents ~/Library/KeyBindings && touch ~/Library/KeyBinding
 # 5. `.zshrc` 구성
 ```
 powerlevel10k/powerlevel10k
+
 plugins=(
 	git
 	zsh-autosuggestions
@@ -190,7 +191,8 @@ git config --global user.name "iCAROS7" && git config --global user.email "homin
 mkdir -p /Users/icaros7/.config/nvim && touch /Users/icaros7/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-       
+```    
+```
 call plug#begin('~/.vim/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
