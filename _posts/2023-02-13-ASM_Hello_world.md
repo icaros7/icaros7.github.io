@@ -7,12 +7,8 @@ tags:
     - aarch64
 toc: true
 published: true
-
 ---
-
 어셈블리어를 통해 화면에 "Hello world!" 출력하기
-
-
 
 # 1. 서론
 
