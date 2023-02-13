@@ -1,7 +1,7 @@
 ---
 title:  "Linux 기본 설정 및 팁.md"
 categories:
-    - TIPs-Linux
+    - TIPs-Init
 tags:
     - 따라하기
     - bash

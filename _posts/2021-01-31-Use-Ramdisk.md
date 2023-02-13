@@ -1,7 +1,7 @@
 ---
 title:  "Ramdisk - 남는 램을 활용 하여 임시 공간 생성"
 categories:
-    - TIPs-Application
+    - TIPs-Windows
 tags:
     - 램디스크
     - Radeon

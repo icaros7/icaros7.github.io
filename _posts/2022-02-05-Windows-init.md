@@ -1,7 +1,7 @@
 ---
 title:  "Windows 기본 설정 및 팁.md"
 categories:
-    - TIPs-Windows
+    - TIPs-Init
 tags:
     - 따라하기
     - bash
