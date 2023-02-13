@@ -33,7 +33,7 @@ published: true
 
  우선 우리는 "Hello world!" 라는 문자열을 출력할 것 이고, 이는 프로그램 실행 중 변경 될 일이 없다. 따라서 우리는 `.data` 섹션에 값을 할당 할 것이다.
 
-```assembly
+```
 .data	; [1]
 
 str:	; [2]
@@ -69,7 +69,7 @@ str_len = . - str						;	[4]
 | 63   | read         | unsigned int fd | char * buf       | size_t count |
 | 64   | write        | unsigned int fd | const char * buf | size_t count |
 
-```assembly
+```
 .text
 
 .global _main
@@ -115,7 +115,7 @@ _main:
 
  지금까지 작성한 어셈블리 코드를 모두 이어 붙이면 다음과 같다.
 
-```assembly
+```
 .data
 
 str:
@@ -250,7 +250,7 @@ main:
 
  우리가 작성한 코드와는 살짝 다른 모습을 보이며, 일부 자세한 정보를 포함하고 있다. 조금 자세히 뜯어보자.
 
-```assembly
+```
     .arch armv8-a				; [1]
     .file   "hello_c.c"	; [2]
     .text
@@ -268,7 +268,7 @@ main:
 4. 모든 데이터는 위치 카운터를 기준으로 padding 하게 한다.
 5. `LC0`에 ascii 타입이 아닌 string 타입으로 "Hello world!"가 stack 내에 정의되어있다.
 
-```assembly
+```
 main:
 .LFB6:
     .cfi_startproc
@@ -312,7 +312,7 @@ main:
 - OS: macOS Ventura 13.2
 - Kernel: Darwin Kernel Version 22.3.0
 
-```assembly
+```
 	.section	__TEXT,__text,regular,pure_instructions
 	.build_version macos, 13, 0	sdk_version 13, 1
 	.globl	_main                           ; -- Begin function main
