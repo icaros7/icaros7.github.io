@@ -17,13 +17,13 @@ tags:
 - OS: Ubuntu Server 18.04.6 LTS amd64
 - RAM: 2GB
 - Storage: 20GB
-- 각 서버 별 분리 및 내부 망 구성
-    1. Gateway: `192.168.xxx.2`
-    1. Web Service Server: `192.168.xxx.151`
-    2. DataBase Server: `192.168.xxx.152`
-    3. Development Server: `192.168.xxx.153`
-    4. Log Backup Server: `192.168.xxx.154`
-    5. DB Backup Server: `192.168.xxx.155`
+- Network
+    - Gateway: `192.168.xxx.2`
+    - Web Service Server: `192.168.xxx.151`
+    - DataBase Server: `192.168.xxx.152`
+    - Development Server: `192.168.xxx.153`
+    - Log Backup Server: `192.168.xxx.154`
+    - DB Backup Server: `192.168.xxx.155`
 - Application
     - Web Server: Apache@2.4.29
     - Web Application: Tomcat@9.0.16
