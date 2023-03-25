@@ -1,13 +1,12 @@
 ---
 title:  "[K-Shield Jr.] 가상 인프라 구축"
 categories:
-
-    - K-Shield
+  - K-Shield
 tags:
-        - k-shield-jr
-            - 케이쉴드
-        toc: true
-        published: true
+  - k-shield-jr
+  - 케이쉴드
+toc: true
+published: true
 ---
 요구사항에 알맞은 가상 인프라를 구축하자
 
