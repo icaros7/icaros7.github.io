@@ -44,11 +44,7 @@
           <div class="page__comments-form">
             <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_label | default: "Leave a Comment" }}</h4>
             <p class="small">{{ site.data.ui-text[site.locale].comment_form_info | default: "Your email address will not be published. Required fields are marked" }} <span class="required">*</span></p>
-<<<<<<< HEAD
-            <form id="new_comment" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint | default: 'https://api.staticman.net/v2/entry/' }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments">
-=======
             <form id="new_comment" class="page__comments-form js-form form" method="post" action="{{ site.comments.staticman.endpoint }}{{ site.repository }}/{{ site.comments.staticman.branch }}/comments">
->>>>>>> minimal/master
               <div class="form__spinner">
                 <i class="fas fa-spinner fa-spin fa-3x fa-fw"></i>
                 <span class="sr-only">{{ site.data.ui-text[site.locale].loading_label | default: "Loading..." }}</span>
@@ -104,16 +100,6 @@
           <div class="js-comments">
             {% if site.data.comments[page.slug] %}
               <h4 class="page__comments-title">{{ site.data.ui-text[site.locale].comments_title | default: "Comments" }}</h4>
-<<<<<<< HEAD
-              {% assign comments = site.data.comments[page.slug] | sort %}
-
-              {% for comment in comments %}
-                {% assign email = comment[1].email %}
-                {% assign name = comment[1].name %}
-                {% assign url = comment[1].url %}
-                {% assign date = comment[1].date %}
-                {% assign message = comment[1].message %}
-=======
               {% assign comments = site.data.comments[page.slug] %}
 
               <!-- In order to sort by date we must have an array of objects, not an array of arrays, so
@@ -131,7 +117,6 @@
                 {% assign url = comment.url %}
                 {% assign date = comment.date %}
                 {% assign message = comment.message %}
->>>>>>> minimal/master
                 {% include comment.html index=forloop.index email=email name=name url=url date=date message=message %}
               {% endfor %}
             {% endif %}
@@ -186,12 +171,9 @@
     {% when "utterances" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="utterances-comments"></section>
-<<<<<<< HEAD
-=======
     {% when "giscus" %}
       <h4 class="page__comments-title">{{ comments_label }}</h4>
       <section id="giscus-comments"></section>
->>>>>>> minimal/master
     {% when "custom" %}
       {% include /comments-providers/custom.html %}
   {% endcase %}
