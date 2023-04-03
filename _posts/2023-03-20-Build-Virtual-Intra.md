@@ -1,10 +1,8 @@
 ---
-title:  "[K-Shield Jr.] 가상 인프라 구축"
+title:  "요구 사항에 맞는 가상 인프라 구축"
 categories:
-  - K-Shield
+  - Study
 tags:
-  - k-shield-jr
-  - 케이쉴드
 toc: true
 published: true
 ---

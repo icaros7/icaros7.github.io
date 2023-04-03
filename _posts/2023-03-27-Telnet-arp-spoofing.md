@@ -1,10 +1,8 @@
 ---
-title:  "[K-Shield Jr.] ARP Spoofing을 이용한 telnet 탈취"
+title:  "ARP Spoofing을 이용한 telnet 탈취"
 categories:
-  - K-Shield
+  - Study
 tags:
-  - k-shield-jr
-  - 케이쉴드
 toc: true
 published: true
 ---
