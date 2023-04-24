@@ -140,7 +140,9 @@ export DIR_WRK=$HOME/workspace
 export DIR_KER=$DIR_WRK/kernel
 export DIR_IMG=$DIR_WRK/image
 
-alias workdir="cd $HOME/workspace"
+alias workdir="cd $DIR_WRK"
+alias kerdir="cd $DIR_WRK/kernel/linux"
+alias syzdir="cd $DIR_WRK/syzkaller"
 alias vim="nvim"
 alias vi="nvim"
 alias lll="lsd -al --no-symlink --group-dirs=first"
@@ -148,6 +150,13 @@ alias ll="lsd -l --no-symlink --group-dirs=first"
 alias ls="lsd -al --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
 alias cat="batcat"
+alias kqm="sudo -s pkill -9 qemu"
+
+# For higher than Intel 12th gen
+alias updateall="sudo -v && syzdir && git pull origin master && make && kerdir && git pull origin master && make TARGETARCH=amd64 TARGETOS=linux -j`nproc` && syzdir && sudo taskset -c 0-15 sh ./run_x86-64.sh"
+
+# For lower than Intel 11th gen
+alias updateall="sudo -v && syzdir && git pull origin master && make && kerdir && git pull origin master && make TARGETARCH=amd64 TARGETOS=linux -j`nproc` && syzdir && sudo sh ./run_x86-64.sh"
 ```
 
 ## OpenSSH Server
