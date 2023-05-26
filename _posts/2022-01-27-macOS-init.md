@@ -254,5 +254,36 @@ TSInstall arduino bash c c_sharp cmake cpp css dockerfile git_rebase gitcommit g
 tlin llvm make markdown markdown_inline python r ruby sql yaml vim
 ```
 
+## 10-4. 명령어로 밝기 조절
+```
+File: bup
+#!/bin/bash
+
+let var=0
+
+if [ $# -eq 1 ]; then
+	var=$1
+fi
+
+while [ `expr ${var}` -ge -1 ]; do
+	osascript -e 'tell application "System Events"' -e 'key code 144' -e ' end tell'
+	var=`expr ${var} - 1`
+done
+```
+```
+File: bdn
+#!/bin/bash
+
+let var=0
+
+if [ $# -eq 1 ]; then
+	var=$1
+fi
+
+while [ `expr ${var}` -ge -1 ]; do
+	osascript -e 'tell application "System Events"' -e 'key code 145' -e ' end tell'
+	var=`expr ${var} - 1`
+done
+```
 ---
 수정: 2023.01.28 12:00
