@@ -124,7 +124,11 @@ alias lll="lsd -al --no-symlink --group-dirs=first"
 alias ll="lsd -l --no-symlink --group-dirs=first"
 alias ls="lsd -al --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
-alias cat="batcat"
+alias cat="bat"
+alias readelf="greadelf"
+alias bup="sh ~/.bup"
+alias bdn="sh ~/.bdn"
+alias dnsflush="sudo -s dscacheutil -flushcache; sudo -s killall -HUP mDNSResponder"
 ```
 
 # 6. brew 및 Rosetta2 설치하기
