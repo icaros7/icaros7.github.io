@@ -115,13 +115,13 @@ $ fragrouter -B1
 
 <img src="/assets/2023-03-27-Telnet-arp-spoofing/3.png" style="zoom:40%;" />
 
-<center><b>&lt 그림 0 &gt</b></center>
+<center><b>< 그림 0 ></b></center>
 
  또한 Target 들은 `arp -a` 명령어로 caching 된 MAC을 보면 Attacker 의 MAC과 다른 Target 의 MAC 이 같은것을 **< 그림 1 >**과 같이 확인 가능하다.
 
 <img src="/assets/2023-03-27-Telnet-arp-spoofing/4.png" style="zoom:40%;" />
 
-<center><b>&lt 그림 1 &gt</b></center>
+<center><b>< 그림 1 ></b></center>
 
 ## 2-2. Traffic Generating
 
@@ -133,20 +133,20 @@ $ telnet 10.200.xxx.17
 
  그럼 Attacker의 wireshark 에서 telnet 패킷이 감지 된다.
 
-- **< 그림 2 >**와 같이 `login: ` 혹은  `Password: `를 Target1이 Telnet을 통해 접속한 Target2에게 전달
-- 이후 패킷은 모두 key event가 발생한 것을 Target1 에게 전달한 패킷 (실제 입력 값)
-- **< 그림 3 >**과 같이 `return` 으로 끝나는걸 보아 계정 또는 비밀번호 입력이 완료 됬음을 인지
-
 <table>
   <tr>
     <td><img src="/assets/2023-03-27-Telnet-arp-spoofing/5.png" style="zoom:45%;"></td>
     <td><img src="/assets/2023-03-27-Telnet-arp-spoofing/6.png" style="zoom:45%;"></td>
   </tr>
   <tr>
-    <th><center>&lt 그림 2 &gt</center></th>
-    <th><center>&lt 그림 3 &gt</center></th>
+    <th><center>< 그림 2 ></center></th>
+    <th><center>< 그림 3 ></center></th>
   </tr>
 </table>
+
+- **< 그림 2 >**와 같이 `login: ` 혹은  `Password: `를 Target1이 Telnet을 통해 접속한 Target2에게 전달
+- 이후 패킷은 모두 key event가 발생한 것을 Target1 에게 전달한 패킷 (실제 입력 값)
+- **< 그림 3 >**과 같이 `return` 으로 끝나는걸 보아 계정 또는 비밀번호 입력이 완료 됬음을 인지
 
  단, 여기서 비밀번호 입력 이후 정상적으로 접속이 되었는지 까지 확인 해야한다. `incorrect` 등의 반환이 되었다면 사용자가 입력 실수를 했음으로 정상적인 비밀번호가 아님을 알 수 있다. 보통의 상황의 경우 shell 이 실행 될 것 이므로 해당 사항을 통해 알 수 있다.
 
