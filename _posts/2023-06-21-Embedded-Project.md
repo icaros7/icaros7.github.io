@@ -3,7 +3,7 @@ title:  "Raspberry Pi Multi-Cluster Project summary"
 categories:
     - iCAROS7 Works
 tags:
-toc: true
+toc: false
 published: true
 ---
 라즈레리파이4를 통한 멀티 클러스터 구성하기
