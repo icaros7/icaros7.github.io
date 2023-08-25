@@ -55,8 +55,10 @@ sudo -s vim /etc/apt/sources.list
 ## 공통 패키지
 ```
 # Add neovim stable and nodejs LTS PPA
-sudo -s add-apt-repository ppa:neovim-ppa/stable -y
-curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
+sudo -s add-apt-repository ppa:neovim-ppa/stable -y && curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
+
+# For Ubuntu 18.04 nodejs LTS PPA
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - 
 
 # Ubuntu 18.04 or higher
 sudo -s apt install neovim nodejs zsh python3 xrdp net-tools tmux htop snap build-essential gcc -y
@@ -71,8 +73,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sudo -s apt install flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
 # Signal Analysis 용 도구
-sudo -s apt install gunradio octave libhackrf libuhd-dev uhd-host libuhd-dev uhd-host -y
-uhd_find_devices
+sudo -s apt install gnuradio octave libhackrf-dev libuhd-dev uhd-host libuhd-dev uhd-host uhd_find_devices -y
 
 ```
 
