@@ -102,13 +102,14 @@ python2 -m pip install --upgrade pip==20.3.4 && python2 -m pip install --upgrade
 
 ## 필요 파일 수동 다운로드 및 설치
 ### 권장 버전
-[MesloLGS NF 폰트 다운로드 페이지](https://github.com/romkatv/powerlevel10k/blob/master/font.md#manual-font-installation)
+[MesloLGS NF 폰트 다운로드 페이지](https://github.com/romkatv/powerlevel10k/blob/master/font.md#manual-font-installation), [Nanum Gothic 폰트 다운로드 페이지](https://creativestudio.kr/1734)
 
 ```
-curl -o regualr.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Regular.ttf \
--o bold.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold.ttf \
--o italic.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Italic.ttf \
--o boldital.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf && sudo -s mv ./*.ttf /usr/share/fonts/ && fc-cache -rvf
+curl -o lgs-regualr.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Regular.ttf \
+-o lgs-bold.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold.ttf \
+-o lgs-italic.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Italic.ttf \
+-o lgs-boldital.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf \
+-o nanum.zip https://blog.kakaocdn.net/dn/NuJA2/btqFeN9A5Ib/lB5xsQ2I7HKK9MKBbp2oQ1/NanumFontSetup_TTF_GOTHIC.zip?attach=1&knm=tfile.zip && unzip ./nanum.zip && sudo -s mv ./*.ttf /usr/share/fonts/ && fc-cache -rvf
 
 # pacman의 경우 debtrap 사용
 # lsd for amd64
