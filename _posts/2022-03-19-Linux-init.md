@@ -73,7 +73,7 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sudo -s apt install flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
 # Signal Analysis 용 도구
-sudo -s apt install gnuradio octave libhackrf-dev libuhd-dev uhd-host libuhd-dev uhd-host uhd_find_devices -y
+sudo -s apt install gnuradio octave libhackrf-dev libuhd-dev uhd-host libuhd-dev uhd-host -y
 
 ```
 
