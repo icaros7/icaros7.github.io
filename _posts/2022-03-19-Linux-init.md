@@ -32,6 +32,7 @@ sudo -s pacman -Su
 ```
 sudo -s apt install vim curl git dialog -y
 sudo -s pacman -Sy vim curl wget git
+
 ```
 
 # 2. 패키지 서버 바꾸기
@@ -47,6 +48,7 @@ sudo -s vim /etc/apt/sources.list
 
 # mirror.misakamikoto.network 으로 변경 (aarch64)
 :%s/archive.ubuntu.com/mirror.misakamikoto.network/g
+
 ```
 
 # 3. 필수 패키지 설치
@@ -57,19 +59,28 @@ sudo -s add-apt-repository ppa:neovim-ppa/stable -y
 curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
 
 # Ubuntu 18.04 or higher
-sudo -s apt install neovim zsh python3 python2 xrdp net-tools tmux htop build-essential gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
+sudo -s apt install neovim nodejs zsh python3 xrdp net-tools tmux htop snap build-essential gcc -y
 
 # Ubuntu 16.04
-sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop build-essential gcc flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system-y
+sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop snap build-essential gcc -y
 
 # Oh-My-Zsh 설치
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Fuzzing 용 도구
+sudo -s apt install flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
+
+# Signal Analysis 용 도구
+sudo -s apt install gunradio octave libhackrf libuhd-dev uhd-host libuhd-dev uhd-host -y
+uhd_find_devices
+
 ```
 
 ## Ubuntu 16.04를 제외한 OS에서의 Python2 pip 설치
 ```
 wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 sudo -s python2 ./get-pip.py
+
 ```
 
 ## 데스크톱 환경 설치
@@ -79,12 +90,14 @@ sudo -s python2 ./get-pip.py
 sudo -s apt install tasksel -y
 sudo -s tasksel install ubuntu-mate-core
 sudo -s tasksel install kde-desktop
+
 ```
 
 ## 보안 공부 환경
 ```
 sudo -s apt install libc6-dbg libssl-dev libffi-dev build-essential gcc-multilib -y
 python2 -m pip install --upgrade pip==20.3.4 && python2 -m pip install --upgrade pwntools
+
 ```
 
 ## 필요 파일 수동 다운로드 및 설치
@@ -111,28 +124,41 @@ sudo -s apt install bat -y && mkdir -p ~/.local/bin && ln -s /usr/bin/batcat ~/.
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
 
 sudo -s dpkg -i *.deb
+
 ```
+
+### Browser
+
+- amd64 아키텍처: [Microsoft Edge Deb](https://www.microsoft.com/en-us/edge/download?form=MA13FJ)
+				- Firefox 제거: `sudo -s snap remove firefox && sudo -s apt purge firefox`
+- aarch64 아키텍처: `sudo -s snap install chromium && sudo -s snap remove firefox` 
 
 # 4. 권장 레포지토리 복제
 ## 공통
 powerlevel10k, AutoSuggestions 및 Highlighting 을 설치
 ```
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
 ```
 
 ## 보안 공부
 ```
 git clone https://github.com/longld/peda.git ~/peda && git clone https://github.com/slimm609/checksec.sh ~/checksec && git clone https://github.com/scwuaptx/Pwngdb.git ~/Pwngdb && git clone https://github.com/Mipu94/peda-heap.git ~/peda-heap
+
 ```
 
 # 5. 설치한 패키지 및 기타 설정
 ## Shell rc
 ```
+powerlevel10k/powerlevel10k
+
 plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
+
+setopt inc_append_history
 
 export GOROOT=$HOME/compiler/go
 export LINARO=$HOME/compiler/linaro
@@ -147,16 +173,18 @@ alias vim="nvim"
 alias vi="nvim"
 alias lll="lsd -al --no-symlink --group-dirs=first"
 alias ll="lsd -l --no-symlink --group-dirs=first"
-alias ls="lsd -al --group-dirs=first"
+alias ls="lsd --group-dirs=first"
 alias lt="lsd --tree --no-symlink"
 alias cat="batcat"
 alias kqm="sudo -s pkill -9 qemu"
+alias tmx="sh ~/tmux-st.sh"
 
 # For higher than Intel 12th gen
 alias updateall="sudo -v && syzdir && git pull origin master && make && kerdir && git pull origin master && make TARGETARCH=amd64 TARGETOS=linux -j`nproc` && syzdir && sudo taskset -c 0-15 sh ./run_x86-64.sh"
 
 # For lower than Intel 11th gen
 alias updateall="sudo -v && syzdir && git pull origin master && make && kerdir && git pull origin master && make TARGETARCH=amd64 TARGETOS=linux -j`nproc` && syzdir && sudo sh ./run_x86-64.sh"
+
 ```
 
 ## OpenSSH Server
@@ -164,6 +192,7 @@ alias updateall="sudo -v && syzdir && git pull origin master && make && kerdir &
 sudo -s vim /etc/ssh/sshd_config
 
 sudo -s systemctl restart ssh.service
+
 ```
 
 ## Xrdp server
@@ -171,6 +200,7 @@ sudo -s systemctl restart ssh.service
 sudo -s vim /etc/xrdp/xrdp.ini
 
 sudo -s systemctl restart xrdp
+
 ```
 
 ## iptables
@@ -184,6 +214,7 @@ sudo -s iptables -t nat -L --line-numbers
 
 # 포트포워딩 삭제 with Number
 sudo -s iptables -t nat -D -PREROUTING {Number}
+
 ```
 
 ## UFW
@@ -192,18 +223,43 @@ sudo -s ufw enable
 
 # (내부) 포트 허용
 sudo -s ufw allow {내부 포트}
+
 ```
 
 ## 보안 공부
 ```
 sudo -s cp $HOME/checksec/checksec /usr/local/bin && cp $HOME/Pwngdb/.gdbinit $HOME/ && echo "source $HOME/peda/peda.py" >> $HOME/.gdbinit
+
 ```
 
-## tmux color scheme
+## tmux
 `~/.tmux.conf`에 내용 추가
 ```
 set -g default-terminal "xterm"
 set -g default-terminal "xterm-256color"
+bind s split-windows -h
+bind v split-windows -v
+bind i resize-pane -U 2
+bind j resize-pane -L 2
+bind l resize-pane -R 2
+bind k resize-pane -D 2
+
+```
+
+```
+touch ~/tmux-st.sh
+
+#!/bin/sh
+tmux rename-window user
+tmux new-session -d
+tmux split-window -h
+tmux selectp -t 1
+tmux split-window -h
+tmux select-layout even-horizontal
+tmux selectp -t 2
+tmux split-window -v
+tmux attach-session
+
 ```
 
 # 6. ssh 인증서 생성
@@ -223,9 +279,8 @@ git config --global user.name "iCAROS7" && git config --global user.email "homin
 # 8. Neovim 설정
 ## init.vim
 ```
-mkdir -p $HOME/.config/nvim && touch $HOME/.config/nvim/init.vim
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir -p $HOME/.config/nvim && touch $HOME/.config/nvim/init.vim && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 ```
 ```
 call plug#begin('~/.vim/plugged')
@@ -253,6 +308,7 @@ set number
 set showmatch
 set hlsearch
 set clipboard=unnamedplus
+set tabstop=4
 " set mouse=a
 
 if has("syntax")
