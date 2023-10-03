@@ -54,14 +54,22 @@ sudo -s vim /etc/apt/sources.list
 # 3. 필수 패키지 설치
 ## 공통 패키지
 ```
-# Add neovim stable and nodejs LTS PPA
-sudo -s add-apt-repository ppa:neovim-ppa/stable -y && curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
+# Add neovim stable PPA
+sudo -s add-apt-repository ppa:neovim-ppa/stable -y
 
-# For Ubuntu 18.04 nodejs LTS PPA
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash - 
+# Add Nodejs PPA
+sudo -s apt install ca-certificates curl gnupg -y && sudo -s mkdir -p /etc/apt/keyrings && curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo -s gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+
+## For 20.04 or higher
+NODE_MAJOR=20
+
+## For 18.04 or lower
+NODE_MAJOR=16
+
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 
 # Ubuntu 18.04 or higher
-sudo -s apt install neovim nodejs zsh python3 xrdp net-tools tmux htop snap build-essential gcc -y
+sudo -s apt install neovim nodejs zsh python3-pip dnsutils openssh-server xrdp net-tools tmux htop snap build-essential gcc -y
 
 # Ubuntu 16.04
 sudo -s apt install zsh gcc python python-pip python-dev net-tools tmux htop snap build-essential gcc -y
@@ -73,14 +81,10 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 sudo -s apt install flex bison libncurses-dev libelf-dev libssl-dev debootstrap qemu-system -y
 
 # Signal Analysis 용 도구
-sudo -s apt install gnuradio octave libhackrf-dev libuhd-dev uhd-host libuhd-dev uhd-host -y
+sudo -s apt install gnuradio octave libhackrf-dev libuhd-dev uhd-host libuhd-dev uhd-host liboctave-dev -y
 
-```
-
-## Ubuntu 16.04를 제외한 OS에서의 Python2 pip 설치
-```
-wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-sudo -s python2 ./get-pip.py
+# Snap Package
+sudo -s snap install bpytop authy
 
 ```
 
@@ -106,24 +110,37 @@ python2 -m pip install --upgrade pip==20.3.4 && python2 -m pip install --upgrade
 [MesloLGS NF 폰트 다운로드 페이지](https://github.com/romkatv/powerlevel10k/blob/master/font.md#manual-font-installation), [Nanum Gothic 폰트 다운로드 페이지](https://creativestudio.kr/1734)
 
 ```
+# MesloLGS NF Downlaod
 curl -o lgs-regualr.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Regular.ttf \
 -o lgs-bold.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold.ttf \
 -o lgs-italic.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Italic.ttf \
--o lgs-boldital.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf \
--o nanum.zip https://blog.kakaocdn.net/dn/NuJA2/btqFeN9A5Ib/lB5xsQ2I7HKK9MKBbp2oQ1/NanumFontSetup_TTF_GOTHIC.zip?attach=1&knm=tfile.zip && unzip ./nanum.zip && sudo -s mv ./*.ttf /usr/share/fonts/ && fc-cache -rvf
+-o lgs-boldital.ttf https://raw.githubusercontent.com/romkatv/powerlevel10k-media/master/MesloLGS%20NF%20Bold%20Italic.ttf
+
+# 나눔고딕은 수동 다운로드
+unzip ./*.zip && sudo -s mv ./*.ttf /usr/share/fonts/ && fc-cache -rvf
 
 # pacman의 경우 debtrap 사용
-# lsd for amd64
-wget https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd_0.23.1_amd64.deb
 
-# lsd for arm64
-wget https://github.com/Peltoche/lsd/releases/download/0.23.1/lsd_0.23.1_arm64.deb
+# lsd
+## For amd64
+wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_amd64.deb
 
-# bat for 20.04 or higher
+## For arm64
+wget https://github.com/lsd-rs/lsd/releases/download/v1.0.0/lsd-musl_1.0.0_arm64.deb
+
+# bat
+## For 20.04 or higher
 sudo -s apt install bat -y && mkdir -p ~/.local/bin && ln -s /usr/bin/batcat ~/.local/bin/bat
 
-# bat for 16.04 / 18.04 amd64
-wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb
+## For 16.04 / 18.04 amd64
+wget https://github.com/sharkdp/bat/releases/download/v0.23.0/bat_0.23.0_amd64.deb
+
+# VS Code
+## For amd64
+wget https://code.visualstudio.com/docs/?dv=linuxarm64_deb
+
+## For arm64
+wget https://code.visualstudio.com/download#
 
 sudo -s dpkg -i *.deb
 
@@ -131,9 +148,32 @@ sudo -s dpkg -i *.deb
 
 ### Browser
 
-- amd64 아키텍처: [Microsoft Edge Deb](https://www.microsoft.com/en-us/edge/download?form=MA13FJ)
-				- Firefox 제거: `sudo -s snap remove firefox && sudo -s apt purge firefox`
+- amd64 아키텍처: [Microsoft Edge Deb](https://www.microsoft.com/en-us/edge/download?form=MA13FJ) or [Direct 117.0.2045.47 Deb](https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_117.0.2045.47-1_amd64.deb?brand=M102)
+  - Firefox 제거: `sudo -s snap remove firefox && sudo -s apt purge firefox`
 - aarch64 아키텍처: `sudo -s snap install chromium && sudo -s snap remove firefox` 
+
+### `keyd` Remapping
+```
+git clone https://github.com/rvaiya/keyd
+cd keyd && make && sudo -s make install
+sudo -s systemctl enable keyd && sudo systemctl start keyd
+sudo -s vim /etc/keyd/default.conf
+
+```
+```
+[ids]
+
+*
+
+[main]
+
+capslock = rightalt
+rightalt = capslock
+backslash = backspace
+backspace = backslash
+
+```
+
 
 # 4. 권장 레포지토리 복제
 ## 공통
@@ -162,8 +202,8 @@ plugins=(
 
 setopt inc_append_history
 
-export GOROOT=$HOME/compiler/go
-export LINARO=$HOME/compiler/linaro
+export GOROOT=/opt/compiler/go
+export LINARO=/opt/compiler/linaro
 export DIR_WRK=$HOME/workspace
 export DIR_KER=$DIR_WRK/kernel
 export DIR_IMG=$DIR_WRK/image
@@ -235,12 +275,12 @@ sudo -s cp $HOME/checksec/checksec /usr/local/bin && cp $HOME/Pwngdb/.gdbinit $H
 ```
 
 ## tmux
-`~/.tmux.conf`에 내용 추가
 ```
+vim ~/.tmux.conf
 set -g default-terminal "xterm"
 set -g default-terminal "xterm-256color"
-bind s split-windows -h
-bind v split-windows -v
+bind s split-window -h
+bind v split-window -v
 bind i resize-pane -U 2
 bind j resize-pane -L 2
 bind l resize-pane -R 2
@@ -249,7 +289,7 @@ bind k resize-pane -D 2
 ```
 
 ```
-touch ~/tmux-st.sh
+vim ~/tmux-st.sh
 
 #!/bin/sh
 tmux rename-window user
@@ -269,6 +309,7 @@ tmux attach-session
 
 ```
 ssh-keygen -t rsa -b 4096 -C "hominlab@gmail.com"
+
 ```
 
 # 7. git 기본 설정
@@ -276,6 +317,7 @@ git config 를 위한 자주 사용하는 설정 들. 중간에 사용자 이름
 
 ```
 git config --global user.name "iCAROS7" && git config --global user.email "hominlab@gmail.com" && git config --global init.defaultBranch main && git config --global pull.rebase false
+
 ```
 
 # 8. Neovim 설정
@@ -330,16 +372,19 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_statusline_ontop = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_tabs = 1
+
 ```
 
 ## CoC 언어 서버
 ```
 CocInstall coc-clangd coc-r-lsp coc-pyright coc-html coc-java coc-tsserver coc-json coc-go coc-css coc-cmake coc-sh
+
 ```
 
 ## TreeSitter 문법
 ```
 TSInstall arduino bash c c_sharp cmake cpp css dockerfile git_rebase gitcommit gitignore go html java javascript json json5 kotlin llvm make markdown markdown_inline python r ruby sql yaml vim
+
 ```
 
 # 9. Parallels Tools 설치
@@ -349,7 +394,8 @@ TSInstall arduino bash c c_sharp cmake cpp css dockerfile git_rebase gitcommit g
 sudo -s mkdir /mnt/cdrom && sudo -s mount /dev/cdrom /mnt/cdrom && sudo -s /mnt/cdrom/install
 
 sudo -s init 6
+
 ```
 
 ---
-수정일: 2023.01.28 21:00
+수정일: 2023.10.03 12:30
